@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>독도 (獨島) — 대한민국의 아름다운 섬</title>
+<meta name="description" content="대한민국 동쪽 끝, 독도를 소개합니다. 위치, 자연, 역사, 그리고 우리가 지켜야 할 이유." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- 네비게이션 -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">獨島 <span>DOKDO</span></a>
+      <nav class="nav__menu" id="navMenu">
+        <a href="#about">개요</a>
+        <a href="#location">위치</a>
+        <a href="#nature">자연</a>
+        <a href="#history">역사</a>
+        <a href="#facts">정보</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="메뉴 열기">☰</button>
+    </div>
+  </header>
+
+  <!-- 히어로: 시간대별 독도 사진을 서서히 크로스페이드 -->
+  <section class="hero" id="hero">
+    <div class="hero__scene" aria-hidden="true">
+      <div class="hero__photo" id="heroPhotoA"></div>
+      <div class="hero__photo" id="heroPhotoB"></div>
+      <div class="hero__scrim"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">대한민국 동쪽 끝, 우리 땅</p>
+      <h1 class="hero__title">독도</h1>
+      <p class="hero__sub">해 뜨는 동해 위, 천년의 세월을 지켜온 대한민국의 섬</p>
+      <div class="hero__coord">
+        <span>북위 37° 14′</span>
+        <span class="dot">·</span>
+        <span>동경 131° 52′</span>
+      </div>
+      <a href="#about" class="hero__cta">독도 알아보기 ↓</a>
+    </div>
+  </section>
+
+  <!-- 개요 -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section__eyebrow">OVERVIEW</p>
+      <h2 class="section__title">독도는 어떤 곳인가요?</h2>
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            <strong>독도(獨島)</strong>는 대한민국 경상북도 울릉군에 속한 섬으로,
+            동해의 가장 동쪽에 자리합니다. 동도(東島)와 서도(西島),
+            그리고 89개의 부속 도서로 이루어진 화산섬입니다.
+          </p>
+          <p>
+            약 460만 년 전 해저 화산 활동으로 생겨난 독도는
+            우리나라에서 가장 오래된 화산섬 중 하나입니다.
+            거친 파도와 바람 속에서도 다양한 생명이 살아가는
+            생태계의 보고이자, 자연이 빚어낸 예술 작품입니다.
+          </p>
+          <p>
+            맑은 날에는 울릉도에서 육안으로 독도를 볼 수 있을 만큼
+            가까우며, 예로부터 우리 조상들의 삶과 역사가
+            깃든 소중한 우리 땅입니다.
+          </p>
+        </div>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num" data-target="460" data-suffix="만 년">0</span>
+            <span class="stat__label">화산섬 형성 시기</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="91" data-suffix="개">0</span>
+            <span class="stat__label">동도·서도 및 부속 도서</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="187554" data-suffix="㎡">0</span>
+            <span class="stat__label">총 면적</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="87" data-suffix="km">0</span>
+            <span class="stat__label">울릉도와의 거리</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 위치 -->
+  <section class="section section--alt" id="location">
+    <div class="container">
+      <p class="section__eyebrow">LOCATION</p>
+      <h2 class="section__title">동해의 가장 동쪽</h2>
+      <p class="section__lead">
+        독도는 울릉도에서 동남쪽으로 약 87.4km 떨어져 있습니다.
+        일본 오키섬(약 157km)보다 우리 울릉도에 훨씬 더 가깝습니다.
+      </p>
+      <div class="location__cards">
+        <div class="loc-card">
+          <div class="loc-card__from">울릉도</div>
+          <div class="loc-card__dist">87.4 km</div>
+          <div class="loc-card__note">대한민국 · 가장 가까운 유인도</div>
+          <div class="loc-card__bar"><span data-width="36%"></span></div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-card__from">오키섬</div>
+          <div class="loc-card__dist">157.5 km</div>
+          <div class="loc-card__note">일본 · 약 1.8배 더 멀다</div>
+          <div class="loc-card__bar"><span data-width="65%"></span></div>
+        </div>
+      </div>
+      <p class="location__quote">“독도는 울릉도의 부속 섬으로, 역사·지리·국제법적으로 명백한 대한민국의 영토입니다.”</p>
+    </div>
+  </section>
+
+  <!-- 자연 -->
+  <section class="section" id="nature">
+    <div class="container">
+      <p class="section__eyebrow">NATURE</p>
+      <h2 class="section__title">살아 숨 쉬는 생태의 보고</h2>
+      <div class="nature__grid">
+        <article class="nature-card">
+          <div class="nature-card__icon">🌊</div>
+          <h3>풍요로운 바다</h3>
+          <p>한류와 난류가 만나는 조경 수역으로, 오징어·명태 등 다양한 어종이 모이는 황금 어장입니다.</p>
+        </article>
+        <article class="nature-card">
+          <div class="nature-card__icon">🐦</div>
+          <h3>바닷새의 낙원</h3>
+          <p>괭이갈매기, 바다제비, 슴새 등이 번식하는 서식지로 천연기념물 제336호로 지정되어 보호받고 있습니다.</p>
+        </article>
+        <article class="nature-card">
+          <div class="nature-card__icon">🌿</div>
+          <h3>희귀한 식물</h3>
+          <p>섬기린초, 해국, 왕호장근 등 강인한 생명력의 식물들이 바위섬에 뿌리내리고 살아갑니다.</p>
+        </article>
+        <article class="nature-card">
+          <div class="nature-card__icon">🦭</div>
+          <h3>바다사자의 흔적</h3>
+          <p>한때 독도 강치(바다사자)의 서식지였으며, 오늘날에도 다양한 해양 생물의 보금자리입니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 역사 타임라인 -->
+  <section class="section section--alt" id="history">
+    <div class="container">
+      <p class="section__eyebrow">HISTORY</p>
+      <h2 class="section__title">천년을 이어온 우리 땅</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__year">512년</span>
+          <div class="timeline__body">
+            <h3>신라, 우산국 복속</h3>
+            <p>신라 지증왕 때 이사부가 우산국(울릉도·독도)을 복속하며 우리 역사에 편입되었습니다.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">1454년</span>
+          <div class="timeline__body">
+            <h3>『세종실록지리지』 기록</h3>
+            <p>“우산(독도)과 무릉(울릉도) 두 섬은 서로 멀지 않아 날씨가 맑으면 바라볼 수 있다”고 명확히 기록했습니다.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">1696년</span>
+          <div class="timeline__body">
+            <h3>안용복의 활약</h3>
+            <p>조선 어부 안용복이 일본으로 건너가 울릉도와 독도가 조선의 영토임을 확인받았습니다.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">1900년</span>
+          <div class="timeline__body">
+            <h3>대한제국 칙령 제41호</h3>
+            <p>울릉도를 군으로 승격하고 독도(석도)를 관할 구역으로 명시하여 행정적 관할을 분명히 했습니다.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">1954년~</span>
+          <div class="timeline__body">
+            <h3>독도경비대 주둔</h3>
+            <p>대한민국이 실효적으로 지배하며, 오늘날까지 독도경비대가 우리 영토를 굳건히 지키고 있습니다.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 정보/팩트 -->
+  <section class="section" id="facts">
+    <div class="container">
+      <p class="section__eyebrow">FACTS</p>
+      <h2 class="section__title">한눈에 보는 독도</h2>
+      <div class="facts__table">
+        <div class="fact-row"><span class="fact-row__key">행정구역</span><span class="fact-row__val">경상북도 울릉군 울릉읍 독도리</span></div>
+        <div class="fact-row"><span class="fact-row__key">구성</span><span class="fact-row__val">동도, 서도 및 89개 부속 도서</span></div>
+        <div class="fact-row"><span class="fact-row__key">총 면적</span><span class="fact-row__val">약 187,554㎡ (축구장 약 26개)</span></div>
+        <div class="fact-row"><span class="fact-row__key">최고 높이</span><span class="fact-row__val">서도 대한봉 168.5m</span></div>
+        <div class="fact-row"><span class="fact-row__key">형성 시기</span><span class="fact-row__val">약 460만~250만 년 전 (화산섬)</span></div>
+        <div class="fact-row"><span class="fact-row__key">천연기념물</span><span class="fact-row__val">제336호 「독도 천연보호구역」</span></div>
+        <div class="fact-row"><span class="fact-row__key">우편번호</span><span class="fact-row__val">40240</span></div>
+        <div class="fact-row"><span class="fact-row__key">관할</span><span class="fact-row__val">대한민국 (독도경비대 상주)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 마무리 배너 -->
+  <section class="closing">
+    <div class="container">
+      <h2 class="closing__title">독도는 대한민국입니다</h2>
+      <p class="closing__text">우리가 알고, 기억하고, 사랑하는 것이 독도를 지키는 시작입니다.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 독도 소개 페이지 · 교육 및 정보 제공 목적으로 제작되었습니다.</p>
+      <p class="footer__note">자료 참고: 외교부 독도, 동북아역사재단, 문화재청</p>
+    </div>
+  </footer>
+
+  <button class="top-btn" id="topBtn" aria-label="맨 위로">↑</button>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

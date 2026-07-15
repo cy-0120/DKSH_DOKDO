@@ -1,0 +1,14 @@
+{
+  "name": "dokdo-web",
+  "version": "1.0.0",
+  "description": "독도(獨島)를 소개하는 웹사이트",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
