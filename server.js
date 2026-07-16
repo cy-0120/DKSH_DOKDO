@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 const isDev = process.env.NODE_ENV !== 'production';
 app.use(
   express.static(path.join(__dirname, 'public'), {
+    index: 'home.html', // public/index.html 대신 home.html을 메인 페이지로 사용
     etag: !isDev,
     lastModified: !isDev,
     setHeaders: isDev
