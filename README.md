@@ -1,13 +1,14 @@
 # 독도 (獨島) 소개 웹사이트
 
-대한민국 동쪽 끝, 독도를 소개하는 정적 웹사이트입니다. DB나 서버 로직 없이 순수 HTML/CSS/JS로 동작하며, Vercel에 정적 사이트로 배포됩니다.
+대한민국 동쪽 끝, 독도를 소개하는 웹사이트입니다. Next.js(App Router) 기반이며, DB 없이 정적으로 프리렌더링되어 Vercel에 배포됩니다.
 
 ## 기술 스택
 
-- 순수 HTML/CSS/JavaScript
+- Next.js 16 (App Router, Turbopack)
+- React 19
+- Tailwind CSS (신규 스타일용) + 기존 커스텀 CSS(`styles/`) 병행
 - Google Fonts: Noto Sans KR · Nanum Myeongjo
-- Vercel 정적 호스팅 (서버리스 함수 없음)
-- Express: 로컬 개발 서버 전용 (배포에는 사용되지 않음)
+- Vercel 배포 (Next.js 프레임워크 자동 감지, 별도 설정 없이 정적 프리렌더링)
 
 ## 로컬 실행
 
@@ -18,50 +19,50 @@ npm run dev
 
 브라우저에서 http://localhost:3000 으로 접속하세요.
 
+## 프로덕션 빌드
+
+```bash
+npm run build
+npm start
+```
+
 ## Vercel 배포
 
-이 프로젝트는 완전한 정적 사이트로 배포됩니다. `vercel.json`은 `public/` 폴더를 output directory로 지정할 뿐, 별도의 빌드나 서버리스 함수가 없습니다.
-
-- 요청은 CDN에서 `public/` 폴더의 파일을 직접 서빙
-- 콜드 스타트 없음, 함수 실행 비용/한도 없음
+Next.js 프로젝트이므로 Vercel이 자동으로 감지해 빌드/배포합니다. 별도의 `vercel.json` 설정이 필요 없습니다.
+현재 페이지는 서버 상태나 DB 없이 완전히 정적으로 프리렌더링됩니다.
 
 ## 프로젝트 구조
 
 ```
+app/
+  layout.js       # 루트 레이아웃: Nav/Footer/TopButton 및 폰트, 전역 CSS
+  page.js          # 메인 페이지 (Hero, 개요, 위치, 정보 섹션)
+  globals.css      # Tailwind 진입점
+components/
+  Nav.js           # 상단 네비게이션 (스크롤 상태, 모바일 토글)
+  Footer.js        # 푸터
+  TopButton.js     # 맨 위로 버튼
+  Hero.js          # 히어로 배경 시간대별 크로스페이드
+  RevealInit.js    # 스크롤 등장 애니메이션 초기화
+  CountersInit.js  # 통계 숫자 카운트업 / 거리 막대 초기화
+styles/
+  style.css        # 기존 커스텀 CSS 진입점 (@import로 구성)
+  base.css, nav.css, hero.css, sections.css, about.css, location.css,
+  closing.css, footer.css, top-btn.css, reveal.css
 public/
-  index.html
-  partials/
-    nav.html      # 전역 네비게이션 템플릿
-    footer.html   # 전역 푸터 템플릿
-  css/
-    style.css
-  js/
-    include.js    # data-include 요소에 partials/* 를 fetch로 삽입
-    counters.js
-    heroSky.js
-    main.js
-    nav.js
-    reveal.js
+  img/             # 로고, 히어로 시간대별 사진 등
   fonts/
-  img/
-server.js       # 로컬 개발 전용
 package.json
-vercel.json
+next.config.mjs
+jsconfig.json        # `@/*` import 별칭
 README.md
 ```
 
-## nav/footer 템플릿
-
-`nav.html`, `footer.html`은 `public/partials/`에 한 번만 작성해두고, 페이지에서는
-`<div data-include="./partials/nav.html"></div>`처럼 자리만 표시합니다.
-`js/include.js`가 페이지 로드 시 `fetch`로 해당 조각을 가져와 그 자리에 채워 넣습니다
-(별도 빌드 단계 없이 브라우저에서 바로 동작).
-
 ## 주요 기능
 
-- 독도 소개 페이지의 히어로 섹션
-- 위치, 자연, 역사, 정보 섹션
-- 모바일 네비게이션 토글 및 애니메이션
-- 로컬 개발에서는 정적 파일 캐싱 비활성화
+- 독도 소개 페이지의 히어로 섹션 (시간대별 배경 크로스페이드)
+- 위치, 개요, 정보 섹션
+- 모바일 네비게이션 토글, 스크롤 등장 애니메이션, 통계 카운트업
+- `public/img/about/`에는 아직 페이지에 연결되지 않은 자연/역사 관련 이미지가 준비되어 있습니다 (nav의 "자연"·"역사" 섹션은 추후 구현 예정)
 
 > 자료 참고: 외교부 독도, 동북아역사재단, 문화재청 공개 정보
