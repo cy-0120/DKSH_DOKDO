@@ -1,0 +1,13 @@
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container footer__logo">
+        <img src="/img/logo.png" alt="독도 로고" />
+      </div>
+      <div className="container footer__inner">
+        <p>교육 및 정보 제공 목적으로 제작되었습니다.</p>
+        <p>&copy; 2026 DoKSH. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+}
