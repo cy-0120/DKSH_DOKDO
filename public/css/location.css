@@ -1,0 +1,49 @@
+/* ===== 위치 ===== */
+.location__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.loc-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  border: 1px solid #e3edf3;
+}
+.loc-card__from { font-size: 1.05rem; font-weight: 700; color: var(--navy); }
+.loc-card__dist {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--ocean);
+  margin: 6px 0;
+}
+.loc-card__note { font-size: .9rem; color: var(--muted); margin-bottom: 16px; }
+.loc-card__bar {
+  height: 10px;
+  background: #e3edf3;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.loc-card__bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--sky), var(--wave));
+  border-radius: 20px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(.2,.8,.2,1);
+}
+.location__quote {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 1.2rem;
+  color: var(--navy);
+  border-left: 4px solid var(--red);
+  padding-left: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .location__cards { grid-template-columns: 1fr; }
+}
