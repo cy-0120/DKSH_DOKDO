@@ -1,0 +1,21 @@
+/* ===== 자연 ===== */
+.nature__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+.nature-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 34px 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f5;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.nature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(21,101,160,.18);
+}
+.nature-card__icon { font-size: 2.6rem; margin-bottom: 14px; }
+.nature-card h3 { color: var(--navy); font-size: 1.2rem; margin-bottom: 10px; }
+.nature-card p { color: var(--muted); font-size: .95rem; }

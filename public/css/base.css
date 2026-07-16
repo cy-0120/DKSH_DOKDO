@@ -1,0 +1,30 @@
+:root {
+  --navy: #0a2540;
+  --deep: #0f3a63;
+  --ocean: #1565a0;
+  --sky: #2e8bc0;
+  --wave: #6fc3df;
+  --foam: #e8f4fa;
+  --sand: #f7f4ec;
+  --ink: #14202b;
+  --muted: #5a6b78;
+  --red: #cd313a;
+  --gold: #d4a017;
+  --white: #ffffff;
+  --shadow: 0 12px 40px rgba(10, 37, 64, 0.12);
+  --radius: 18px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Noto Sans KR", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { width: min(1080px, 90%); margin: 0 auto; }
