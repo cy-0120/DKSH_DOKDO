@@ -9,7 +9,7 @@ const REVEAL_SELECTOR = [
   '.fact-row',
   '.location__quote',
   '.section__lead',
-].join(', ');
+].join(', '); 
 
 export function initReveal() {
   const targets = document.querySelectorAll(REVEAL_SELECTOR);

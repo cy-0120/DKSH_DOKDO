@@ -1,4 +1,10 @@
 /* ===== 푸터 ===== */
-.footer { background: #06182b; color: rgba(255,255,255,.7); padding: 40px 0; }
-.footer__inner { text-align: center; }
-.footer__note { font-size: .82rem; opacity: .6; margin-top: 8px; }
+.footer {
+  background: #06182b;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px 0;
+  justify-items: center;
+}
+.footer__inner {
+  text-align: center;
+}

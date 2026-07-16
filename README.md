@@ -1,60 +1,65 @@
-# DKSH_DOKDO
+# 독도 (獨島) 소개 웹사이트
 
-독도(獨島)를 소개하는 웹사이트입니다. **Node.js(Express)** 서버가 `public/` 폴더의 정적 파일(HTML·CSS·JS)을 제공하며, Vercel 배포에 대응합니다.
+대한민국 동쪽 끝, 독도를 소개하는 정적 웹사이트입니다. Express 기반 로컬 서버와 Vercel 배포 구성이 포함되어 있습니다.
 
 ## 기술 스택
 
-- **Node.js + Express** — 정적 파일 서버
-- 순수 **HTML / CSS / JavaScript** (프레임워크 없음)
-- JS는 ES 모듈로 기능별 분리
-
-## 프로젝트 구조
-
-```
-dokdo/
-├─ server.js              # Express 서버 (public 정적 서빙)
-├─ package.json
-├─ vercel.json            # Vercel 배포 설정
-└─ public/
-   ├─ index.html          # 페이지 마크업
-   ├─ css/
-   │  └─ style.css        # 스타일
-   └─ js/
-      ├─ main.js          # 진입점 (각 모듈 초기화)
-      ├─ nav.js           # 네비게이션 · 모바일 메뉴 · 맨 위로 버튼
-      ├─ reveal.js        # 스크롤 등장 애니메이션
-      └─ counters.js      # 통계 카운트업 · 거리 막대
-```
+- Node.js + Express
+- 순수 HTML/CSS/JavaScript
+- Google Fonts: Noto Sans KR · Nanum Myeongjo
+- Vercel Node 서버리스 배포
 
 ## 로컬 실행
 
 ```bash
 npm install
-npm run dev     # node --watch server.js (파일 변경 시 자동 재시작)
-# 또는
-npm start       # node server.js
+npm run dev
 ```
 
-→ 브라우저에서 http://localhost:3000 접속
+브라우저에서 http://localhost:3000 으로 접속하세요.
+
+## 프로덕션 실행
+
+```bash
+npm start
+```
 
 ## Vercel 배포
 
-### 방법 1. GitHub 연동 (권장)
+이 프로젝트는 `server.js`를 `@vercel/node` 빌드로 실행하도록 구성되어 있습니다.
 
-1. 저장소를 GitHub에 push
-2. [vercel.com](https://vercel.com) → **Add New → Project** → 저장소 선택
-3. `vercel.json` 설정에 따라 `server.js`가 서버리스 함수로 배포됨 → **Deploy**
+### 배포 요약
 
-### 방법 2. Vercel CLI
+- `vercel.json`에 `server.js`를 빌드 대상(entrypoint)으로 명시
+- 모든 요청은 `server.js`로 라우팅
+- 정적 파일은 `public/` 폴더에서 제공
 
-```bash
-npm i -g vercel
-vercel          # 미리보기 배포
-vercel --prod   # 프로덕션 배포
+## 프로젝트 구조
+
+```
+public/
+  index.html
+  css/
+    style.css
+  js/
+    counters.js
+    heroSky.js
+    main.js
+    nav.js
+    reveal.js
+  fonts/
+  img/
+server.js
+package.json
+vercel.json
+README.md
 ```
 
-## 콘텐츠 섹션
+## 주요 기능
 
-개요 · 위치 · 자연 · 역사(타임라인) · 정보 · 마무리
+- 독도 소개 페이지의 히어로 섹션
+- 위치, 자연, 역사, 정보 섹션
+- 모바일 네비게이션 토글 및 애니메이션
+- 로컬 개발에서는 정적 파일 캐싱 비활성화
 
 > 자료 참고: 외교부 독도, 동북아역사재단, 문화재청 공개 정보
