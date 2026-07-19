@@ -3,7 +3,7 @@
   --deep: #0f3a63;
   --ocean: #1565a0;
   --sky: #2e8bc0;
-  --wave: #6fc3df;
+  --wave: #356473;
   --foam: #e8f4fa;
   --sand: #f7f4ec;
   --ink: #14202b;
@@ -15,9 +15,15 @@
   --radius: 18px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Noto Sans KR", system-ui, sans-serif;
@@ -27,4 +33,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.container { width: min(1080px, 90%); margin: 0 auto; }
+.container {
+  width: min(1080px, 90%);
+  margin: 0 auto;
+}

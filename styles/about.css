@@ -5,8 +5,14 @@
   gap: 60px;
   align-items: center;
 }
-.about__text p { margin-bottom: 18px; color: #34424e; font-size: 1.05rem; }
-.about__text strong { color: var(--ocean); }
+.about__text p {
+  margin-bottom: 18px;
+  color: #34424e;
+  font-size: 1.05rem;
+}
+.about__text strong {
+  color: var(--ocean);
+}
 .about__stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -31,13 +37,18 @@
 .stat__label {
   display: block;
   margin-top: 8px;
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
 @media (max-width: 860px) {
-  .about__grid { grid-template-columns: 1fr; gap: 36px; }
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
 }
 @media (max-width: 480px) {
-  .about__stats { grid-template-columns: 1fr 1fr; }
+  .about__stats {
+    grid-template-columns: 1fr 1fr;
+  }
 }
