@@ -24,7 +24,7 @@ export default function Nav() {
     <header className={`nav${scrolled ? ' scrolled' : ''}${onLight ? ' nav--onlight' : ''}`} id="nav">
       <div className="nav__inner">
         <a href="/" className="nav__logo">
-          <img src="/img/logo.png" height={70} width={140} alt="독도 로고" />
+          <img src="/img/logo.png" height={90} width={150} alt="독도 로고" />
         </a>
         <nav className={`nav__menu${open ? ' open' : ''}`} id="navMenu">
           <a href="/about" onClick={() => setOpen(false)}>
