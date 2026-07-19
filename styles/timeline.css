@@ -1,0 +1,58 @@
+/* ===== 역사 연표 ===== */
+.timeline {
+  position: relative;
+  margin-top: 20px;
+  padding-left: 30px;
+  border-left: 2px solid #e3edf3;
+}
+.timeline__item { position: relative; padding-bottom: 40px; }
+.timeline__item:last-child { padding-bottom: 0; }
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -37px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ocean);
+  border: 3px solid var(--foam);
+}
+.timeline__year {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--ocean);
+  margin-bottom: 6px;
+}
+.timeline__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.timeline__title-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--navy);
+  text-decoration: none;
+}
+.timeline__title-link:hover {
+  color: var(--ocean);
+  text-decoration: underline;
+}
+.timeline__title-link .ext-icon {
+  font-size: .75em;
+  opacity: .55;
+}
+.timeline__desc {
+  color: var(--muted);
+  font-size: .95rem;
+  max-width: 640px;
+}
+
+@media (max-width: 480px) {
+  .timeline { padding-left: 20px; }
+  .timeline__item::before { left: -27px; }
+}

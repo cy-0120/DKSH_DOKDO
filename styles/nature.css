@@ -1,0 +1,61 @@
+/* ===== 자연/동물/지형 갤러리 ===== */
+.gallery__group { margin-bottom: 40px; }
+.gallery__group:last-child { margin-bottom: 0; }
+.gallery__group-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.gallery__grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+.gallery__grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+.nature-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f5;
+}
+.nature-card__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.nature-card__name {
+  padding: 12px 14px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--navy);
+  font-style: italic;
+}
+.nature-card__ko {
+  display: block;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--navy);
+  font-style: normal;
+}
+.nature-card__sci {
+  display: block;
+  margin-top: 2px;
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .gallery__grid--cols-2,
+  .gallery__grid--cols-3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .gallery__grid--cols-2,
+  .gallery__grid--cols-3 { grid-template-columns: 1fr; }
+}

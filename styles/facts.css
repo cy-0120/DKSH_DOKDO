@@ -1,0 +1,86 @@
+/* ===== 팩트 테이블 (행정/자료실 공용) ===== */
+.facts__table {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f5;
+  overflow: hidden;
+}
+.fact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 26px;
+  border-bottom: 1px solid #eef2f5;
+}
+.fact-row:last-child { border-bottom: none; }
+.fact-row__key { color: var(--muted); font-weight: 600; }
+.fact-row__val { color: var(--navy); font-weight: 700; text-align: right; }
+
+@media (max-width: 480px) {
+  .fact-row { flex-direction: column; gap: 4px; }
+  .fact-row__val { text-align: left; }
+}
+
+/* ===== 참고자료 카드 (자료실) ===== */
+.ref-card {
+  display: block;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.ref-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 44px rgba(10, 37, 64, 0.16);
+}
+.ref-card__body { padding: 22px 24px; }
+.ref-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.ref-card__desc {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.ref-card__url {
+  font-size: .8rem;
+  color: var(--sky);
+}
+
+/* ===== 용어 설명 (자료실) ===== */
+.glossary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+.glossary__item {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f5;
+  padding: 22px 24px;
+}
+.glossary__term {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ocean);
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+.glossary__term:hover {
+  text-decoration: underline;
+}
+.glossary__desc {
+  font-size: .9rem;
+  color: var(--muted);
+}
+.ext-icon {
+  font-size: .75em;
+  opacity: .55;
+}

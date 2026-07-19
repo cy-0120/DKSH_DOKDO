@@ -1,0 +1,41 @@
+/* ===== 페이지 내 섹션 이동 박스 (전역 네비게이션과 별도) ===== */
+.subnav {
+  position: sticky;
+  top: 86px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  width: min(1080px, 90%);
+  margin: 0 auto;
+  padding: 14px 0;
+}
+.subnav__inner {
+  display: flex;
+  gap: 10px;
+  background: var(--white);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f5;
+  padding: 8px;
+}
+.subnav a {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.subnav a:hover {
+  color: var(--ocean);
+}
+.subnav a.active {
+  background: var(--foam);
+  color: var(--ocean);
+}
+
+@media (max-width: 480px) {
+  .subnav__inner { gap: 4px; padding: 6px; }
+  .subnav a { padding: 8px 14px; font-size: .82rem; }
+}

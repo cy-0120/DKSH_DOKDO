@@ -16,6 +16,15 @@
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 
 }
+/* 투명 상태에서 밝은 배경(히어로 사진이 없는 페이지) 위에 놓일 때 글자를 어둡게 */
+.nav.nav--onlight .nav__logo,
+.nav.nav--onlight .nav__menu a,
+.nav.nav--onlight .nav__toggle {
+  color: var(--ink);
+}
+.nav.nav--onlight .nav__menu a:hover {
+  color: var(--ocean);
+}
 .nav__inner {
   width: min(1200px, 92%);
   margin: 0 auto;
@@ -94,5 +103,12 @@
   }
   .nav__toggle {
     display: block;
+  }
+  /* 모바일 드롭다운은 항상 어두운 배경이므로, onlight 상태여도 글자는 밝게 유지 */
+  .nav.nav--onlight .nav__menu a {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .nav.nav--onlight .nav__menu a:hover {
+    color: var(--white);
   }
 }
