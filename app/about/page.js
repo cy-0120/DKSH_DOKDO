@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import AboutSubNav from '@/components/AboutSubNav';
 import Lightbox from '@/components/Lightbox';
 
@@ -9,7 +10,7 @@ function formatName(filename) {
     .join(' ');
 }
 
-function Gallery({ folder, items }) {
+function Gallery({ folder, items, sizes = '(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw' }) {
   return (
     <div className="gallery__grid">
       {items.map((item) => {
@@ -18,11 +19,13 @@ function Gallery({ folder, items }) {
         const sci = typeof item === 'string' ? formatName(item) : item.sci || (ko ? null : formatName(item.file));
         return (
           <figure className="nature-card" key={file}>
-            <img
+            <Image
               className="nature-card__img"
               src={`${folder}${file}`}
               alt={ko || sci}
-              loading="lazy"
+              width={400}
+              height={300}
+              sizes={sizes}
             />
             <figcaption className="nature-card__name">
               {ko ? (
@@ -152,8 +155,16 @@ export default function About() {
             우리 울릉도에 훨씬 더 가깝습니다.
           </p>
           <div className="gallery__grid gallery__grid--cols-2" style={{ marginBottom: 36 }}>
-            <Gallery folder="/img/about/location/" items={['location.jpg']} />
-            <Gallery folder="/img/about/location/" items={['distance.jpg']} />
+            <Gallery
+              folder="/img/about/location/"
+              items={['location.jpg']}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <Gallery
+              folder="/img/about/location/"
+              items={['distance.jpg']}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
           <div className="location__cards">
             <div className="loc-card">
@@ -185,29 +196,35 @@ export default function About() {
           </p>
           <div className="gallery__grid gallery__grid--cols-3">
             <figure className="nature-card">
-              <img
+              <Image
                 className="nature-card__img"
                 src="/img/about/geo/stones-east.png"
                 alt="동도 갯바위"
-                loading="lazy"
+                width={400}
+                height={300}
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
               />
               <figcaption className="nature-card__name">동도 갯바위</figcaption>
             </figure>
             <figure className="nature-card">
-              <img
+              <Image
                 className="nature-card__img"
                 src="/img/about/geo/stones-west.png"
                 alt="서도 갯바위"
-                loading="lazy"
+                width={400}
+                height={300}
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
               />
               <figcaption className="nature-card__name">서도 갯바위</figcaption>
             </figure>
             <figure className="nature-card">
-              <img
+              <Image
                 className="nature-card__img"
                 src="/img/about/geo/under-sea.jpg"
                 alt="해저 지형"
-                loading="lazy"
+                width={400}
+                height={300}
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
               />
               <figcaption className="nature-card__name">해저 지형</figcaption>
             </figure>
