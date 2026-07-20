@@ -2,7 +2,7 @@
 .section { padding: 100px 0; }
 .section--alt { background: var(--foam); }
 .section__eyebrow {
-  color: var(--sky);
+  color: var(--ocean);
   font-size: .85rem;
   font-weight: 700;
   letter-spacing: 4px;

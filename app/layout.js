@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body>
         <Nav />
-        {children}
+        <main>{children}</main>
         <Footer />
         <TopButton />
         <RevealInit />
