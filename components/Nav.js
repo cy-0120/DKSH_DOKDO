@@ -37,6 +37,12 @@ export default function Nav() {
           <a href="/docs" onClick={() => setOpen(false)}>
             자료실
           </a>
+          <a href="/visit" onClick={() => setOpen(false)}>
+            방문 안내
+          </a>
+          <a href="/faq" onClick={() => setOpen(false)}>
+            FAQ
+          </a>
         </nav>
         <button
           className="nav__toggle"

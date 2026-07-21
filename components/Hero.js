@@ -101,7 +101,7 @@ export default function Hero() {
           <span>동경 131° 52&apos;</span>
         </div>
         <a href="/about" className="hero__cta">
-          독도 알아보기 ↓
+          독도 알아보기  →
         </a>
       </div>
     </section>

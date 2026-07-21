@@ -2,17 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
-const SECTIONS = [
-  { id: 'location', label: '위치' },
-  { id: 'administration', label: '행정' },
-  { id: 'nature', label: '자연' },
-];
-
-export default function AboutSubNav() {
-  const [active, setActive] = useState('location');
+export default function SubNav({ sections }) {
+  const [active, setActive] = useState(sections[0]?.id);
 
   useEffect(() => {
-    const targets = SECTIONS.map((s) => document.getElementById(s.id)).filter(Boolean);
+    const targets = sections.map((s) => document.getElementById(s.id)).filter(Boolean);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -25,12 +19,12 @@ export default function AboutSubNav() {
 
     targets.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   return (
     <div className="subnav">
       <div className="subnav__inner">
-        {SECTIONS.map((s) => (
+        {sections.map((s) => (
           <a key={s.id} href={`#${s.id}`} className={active === s.id ? 'active' : ''}>
             {s.label}
           </a>

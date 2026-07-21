@@ -16,3 +16,20 @@
   width: 152px;
   height: 101px;
 }
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin: 18px 0 24px;
+}
+.footer__links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 600;
+  transition: color .2s ease;
+}
+.footer__links a:hover {
+  color: var(--white);
+}

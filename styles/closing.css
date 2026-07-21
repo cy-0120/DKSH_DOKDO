@@ -1,6 +1,6 @@
 /* ===== 마무리 배너 ===== */
 .closing {
-  padding: 120px 0;
+  padding: 70px 0;
   text-align: center;
   background:
     linear-gradient(180deg, var(--ocean), var(--navy));
@@ -13,3 +13,11 @@
   letter-spacing: 4px;
 }
 .closing__text { margin-top: 18px; opacity: .9; font-size: 1.1rem; }
+.closing__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+.closing__actions .hero__cta { margin-top: 0; }

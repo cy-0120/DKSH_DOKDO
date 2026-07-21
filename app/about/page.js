@@ -1,6 +1,13 @@
 import Image from 'next/image';
-import AboutSubNav from '@/components/AboutSubNav';
+import SubNav from '@/components/SubNav';
 import Lightbox from '@/components/Lightbox';
+import LocationCompareMap from '@/components/LocationCompareMap';
+
+const ABOUT_SECTIONS = [
+  { id: 'location', label: '위치' },
+  { id: 'administration', label: '행정' },
+  { id: 'nature', label: '자연' },
+];
 
 function formatName(filename) {
   const base = filename.replace(/\.[a-z]+$/i, '');
@@ -122,15 +129,43 @@ const FACILITIES = [
   { key: '최초 주민', val: '최종덕, 1981년 주민등록 이전' },
 ];
 
+const TITLE = '독도 소개 — 위치·행정·자연 | 독도';
+const DESCRIPTION =
+  '독도의 위치와 지형, 행정 정보, 그리고 그 안에서 살아가는 식물과 동물까지 — 독도를 자세히 소개합니다.';
+
 export const metadata = {
-  title: '독도 소개 — 위치·행정·자연 | 독도',
-  description:
-    '독도의 위치와 지형, 행정 정보, 그리고 그 안에서 살아가는 식물과 동물까지 — 독도를 자세히 소개합니다.',
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: { title: TITLE, description: DESCRIPTION, url: '/about' },
+  twitter: { title: TITLE, description: DESCRIPTION },
+};
+
+const PLACE_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Place',
+  name: '독도',
+  alternateName: 'Dokdo',
+  description: DESCRIPTION,
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: '경상북도',
+    addressLocality: '울릉군 울릉읍 독도리',
+    addressCountry: 'KR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 37.2333,
+    longitude: 131.8667,
+  },
 };
 
 export default function About() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PLACE_JSON_LD) }}
+      />
       {/* 페이지 인트로 */}
       <section className="section" id="about-intro">
         <div className="container">
@@ -143,7 +178,7 @@ export default function About() {
         </div>
       </section>
 
-      <AboutSubNav />
+      <SubNav sections={ABOUT_SECTIONS} />
 
       {/* 위치 (+ 지형) */}
       <section className="section section--alt" id="location">
@@ -154,17 +189,17 @@ export default function About() {
             독도는 울릉도에서 동남쪽으로 약 87.4km 떨어져 있습니다. 일본 오키섬(약 157.5km)보다
             우리 울릉도에 훨씬 더 가깝습니다.
           </p>
-          <div className="gallery__grid gallery__grid--cols-2" style={{ marginBottom: 36 }}>
-            <Gallery
-              folder="/img/about/location/"
-              items={['location.jpg']}
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            <Gallery
-              folder="/img/about/location/"
-              items={['distance.jpg']}
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+          <div style={{ maxWidth: 480, margin: '0 auto 36px' }}>
+            <figure className="nature-card">
+              <Image
+                className="nature-card__img"
+                src="/img/about/location/location.jpg"
+                alt="독도 위치도"
+                width={400}
+                height={300}
+                sizes="(max-width: 768px) 100vw, 480px"
+              />
+            </figure>
           </div>
           <div className="location__cards">
             <div className="loc-card">
@@ -188,6 +223,8 @@ export default function About() {
             “독도는 울릉도의 부속 섬으로, 역사·지리·국제법적으로 명백한 대한민국의
             영토입니다.”
           </p>
+
+          <LocationCompareMap variant="full" />
 
           <h3 className="section__subtitle">지형: 화산이 빚어낸 섬</h3>
           <p className="section__lead">

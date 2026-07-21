@@ -85,10 +85,15 @@ const TIMELINE = [
   },
 ];
 
+const TITLE = '독도의 역사 | 독도';
+const DESCRIPTION =
+  '512년 우산국 복속부터 오늘날까지, 독도가 대한민국의 영토임을 뒷받침하는 역사를 연표로 소개합니다.';
+
 export const metadata = {
-  title: '독도의 역사 | 독도',
-  description:
-    '512년 우산국 복속부터 오늘날까지, 독도가 대한민국의 영토임을 뒷받침하는 역사를 연표로 소개합니다.',
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: { title: TITLE, description: DESCRIPTION, url: '/history' },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
 export default function History() {

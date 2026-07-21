@@ -13,6 +13,10 @@ const REVEAL_SELECTOR = [
   '.fact-row',
   '.location__quote',
   '.section__lead',
+  '.lcm-card',
+  '.glossary__item',
+  '.rebuttal-card',
+  '.faq-item',
 ].join(', ');
 
 export default function RevealInit() {

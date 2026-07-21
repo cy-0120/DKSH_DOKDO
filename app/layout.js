@@ -7,16 +7,66 @@ import TopButton from '@/components/TopButton';
 import RevealInit from '@/components/RevealInit';
 import CountersInit from '@/components/CountersInit';
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const SITE_TITLE = '독도 (獨島) — 대한민국의 아름다운 섬';
+const SITE_DESCRIPTION =
+  '대한민국 동쪽 끝, 독도를 소개합니다. 위치, 자연, 역사, 그리고 우리가 지켜야 할 이유.';
+
 export const metadata = {
-  title: '독도 (獨島) — 대한민국의 아름다운 섬',
-  description:
-    '대한민국 동쪽 끝, 독도를 소개합니다. 위치, 자연, 역사, 그리고 우리가 지켜야 할 이유.',
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  keywords: [
+    '독도',
+    '독도 영유권',
+    '울릉도',
+    '대한민국 영토',
+    '독도 역사',
+    '독도 방문',
+    'Dokdo',
+  ],
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: '/',
+    siteName: '독도',
+    locale: 'ko_KR',
+    type: 'website',
+    images: [
+      {
+        url: '/img/dokdo-time/dokdo-morning.png',
+        width: 1264,
+        height: 846,
+        alt: '독도의 아침 풍경',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['/img/dokdo-time/dokdo-morning.png'],
+  },
+};
+
+const WEBSITE_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '독도',
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  inLanguage: 'ko-KR',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
+        />
         <Nav />
         <main>{children}</main>
         <Footer />
