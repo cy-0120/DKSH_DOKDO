@@ -1,9 +1,13 @@
 /* ===== 콘텐츠 섹션 공통 (개요/위치/자연/역사/정보가 공유) ===== */
-.section { padding: 100px 0; }
-.section--alt { background: var(--foam); }
+.section {
+  padding: 100px 0;
+}
+.section--alt {
+  background: var(--surface-alt);
+}
 .section__eyebrow {
   color: var(--ocean);
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 4px;
   margin-bottom: 12px;
@@ -12,12 +16,12 @@
   font-family: "Nanum Myeongjo", serif;
   font-size: clamp(1.9rem, 4.5vw, 2.8rem);
   font-weight: 800;
-  color: var(--navy);
+  color: var(--heading);
   margin-bottom: 20px;
 }
 .section__lead {
   font-size: 1.1rem;
-  color: var(--muted);
+  color: var(--text-muted);
   max-width: 720px;
   margin-bottom: 40px;
 }
@@ -25,11 +29,15 @@
   font-family: "Nanum Myeongjo", serif;
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--heading);
   margin: 56px 0 20px;
 }
 
 @media (max-width: 480px) {
-  .section { padding: 70px 0; }
-  .section__subtitle { margin: 40px 0 16px; }
+  .section {
+    padding: 70px 0;
+  }
+  .section__subtitle {
+    margin: 40px 0 16px;
+  }
 }

@@ -15,7 +15,7 @@ const REVEAL_SELECTOR = [
   '.section__lead',
   '.lcm-card',
   '.glossary__item',
-  '.rebuttal-card',
+  '.reason-card',
   '.faq-item',
 ].join(', ');
 

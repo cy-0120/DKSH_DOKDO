@@ -2,7 +2,7 @@ import SubNav from '@/components/SubNav';
 
 const DOCS_SECTIONS = [
   { id: 'general-history', label: '일반 역사 자료' },
-  { id: 'rebuttal', label: '반박 자료' },
+  { id: 'reason', label: '근거 자료' },
 ];
 
 const KEY_DATA = [
@@ -93,14 +93,42 @@ const REFERENCES = [
     url: 'https://encykorea.aks.ac.kr/Article/E0073512',
     desc: '1953~1956년 독도를 지킨 민간 수비대의 활동 기록',
   },
+  {
+    title: '국가기록원 독도 기록',
+    url: 'https://theme.archives.go.kr/next/koreaOfRecord/dokdo.do',
+    desc: '국가기록원이 정리한 독도 관련 역사·국제법 기록과 실효 지배 현황',
+  },
+  {
+    title: '우리역사넷 - 국사편찬위원회',
+    url: 'https://contents.history.go.kr',
+    desc: '국사편찬위원회가 운영하는 한국사 학습 포털로, 독도 관련 사료를 다수 수록',
+  },
+  {
+    title: '대한민국 정책브리핑',
+    url: 'https://www.korea.kr',
+    desc: '독도 관련 정부 정책과 보도자료를 제공하는 정책 포털',
+  },
 ];
 
-const REBUTTAL = [
+const REASON = [
   {
     claim: '일본은 17세기에 이미 다케시마(독도)에 대한 영유권을 확립했다고 주장합니다.',
     answer:
       '1693년과 1696년 안용복이 두 차례 일본에 건너가 항의하자, 에도 막부는 스스로 울릉도·독도가 조선 땅임을 인정하고 일본인의 도해를 금지했습니다. 오히려 일본 스스로 조선의 영유권을 인정한 기록입니다.',
     url: 'https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n306760&code=kc_age_30',
+  },
+  {
+    claim:
+      '일본은 1625년경부터 오야·무라카와 가문이 에도 막부의 허가를 받아 울릉도·독도 인근에서 조업한 사실이 실효 지배의 근거라고 주장합니다.',
+    answer:
+      '당시 일본 어민들이 막부로부터 별도의 "도해 면허(渡海免許)"를 발급받아야 했다는 사실 자체가, 막부가 울릉도와 독도를 자국 영토가 아닌 외국 땅으로 인식하고 있었음을 보여줍니다. 이 면허 제도는 1696년 도해금지령으로 폐지되었습니다.',
+    url: 'https://dokdo.mofa.go.kr/m/kor/dokdo/reason_list.jsp',
+  },
+  {
+    claim: '일본은 독도가 오래전부터 자국의 "고유 영토"였다고 주장합니다.',
+    answer:
+      '일본의 최고 행정기관이었던 태정관(太政官)은 1877년 "다케시마(울릉도) 외 일도(一島, 독도)는 일본과 관계없다"는 지령을 내무성에 내렸습니다. 일본 정부 스스로 근대에 이르기까지 독도를 자국 영토로 보지 않았음을 공식 문서로 확인해 주는 결정적 근거입니다.',
+    url: 'https://dokdo.mofa.go.kr/kor/pds/part06_view09.jsp',
   },
   {
     claim:
@@ -134,7 +162,7 @@ const REBUTTAL = [
 
 const TITLE = '자료실 | 독도';
 const DESCRIPTION =
-  '독도의 핵심 데이터, 기록, 용어 설명, 참고자료와 일본 주장에 대한 반박 자료를 모아둔 자료실입니다.';
+  '독도의 핵심 데이터, 기록, 용어 설명, 참고자료와 일본 주장에 대한 근거 자료를 모아둔 자료실입니다.';
 
 export const metadata = {
   title: TITLE,
@@ -152,7 +180,7 @@ export default function Docs() {
           <h1 className="section__title">자료실</h1>
           <p className="section__lead">
             독도에 관한 데이터를 한눈에 확인하고, 주요 용어를 익히고, 일본의 주장에 대한
-            반박 근거까지 정리했습니다.
+            근거까지 정리했습니다.
           </p>
         </div>
       </section>
@@ -239,28 +267,28 @@ export default function Docs() {
         </div>
       </section>
 
-      {/* 반박 자료 */}
-      <section className="section" id="rebuttal">
+      {/* 근거 자료 */}
+      <section className="section" id="reason">
         <div className="container">
-          <p className="section__eyebrow">REBUTTAL</p>
-          <h2 className="section__title">반박 자료</h2>
+          <p className="section__eyebrow">REASON</p>
+          <h2 className="section__title">근거 자료</h2>
           <p className="section__lead">
-            일본이 독도에 대해 되풀이하는 주장과, 이를 반박하는 역사적·국제법적 근거를
+            일본이 독도에 대해 되풀이하는 주장과, 이에 대한 역사적·국제법적 근거를
             정리했습니다.
           </p>
-          <div className="rebuttal-list">
-            {REBUTTAL.map((r) => (
-              <div className="rebuttal-card" key={r.claim}>
-                <div className="rebuttal-card__claim">
-                  <span className="rebuttal-card__label">일본의 주장</span>
-                  <p className="rebuttal-card__text">{r.claim}</p>
+          <div className="reason-list">
+            {REASON.map((r) => (
+              <div className="reason-card" key={r.claim}>
+                <div className="reason-card__claim">
+                  <span className="reason-card__label">일본의 주장</span>
+                  <p className="reason-card__text">{r.claim}</p>
                 </div>
-                <div className="rebuttal-card__answer">
-                  <span className="rebuttal-card__label">사실은</span>
+                <div className="reason-card__answer">
+                  <span className="reason-card__label">사실은</span>
                   <div>
-                    <p className="rebuttal-card__text">{r.answer}</p>
+                    <p className="reason-card__text">{r.answer}</p>
                     <a
-                      className="rebuttal-card__source"
+                      className="reason-card__source"
                       href={r.url}
                       target="_blank"
                       rel="noopener noreferrer"

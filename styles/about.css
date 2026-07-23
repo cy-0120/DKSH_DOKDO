@@ -7,7 +7,7 @@
 }
 .about__text p {
   margin-bottom: 18px;
-  color: #34424e;
+  color: var(--text);
   font-size: 1.05rem;
 }
 .about__text strong {
@@ -19,12 +19,12 @@
   gap: 18px;
 }
 .stat {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   padding: 26px 20px;
   text-align: center;
   box-shadow: var(--shadow);
-  border: 1px solid #eef2f5;
+  border: 1px solid var(--border);
 }
 .stat__num {
   display: block;
@@ -38,7 +38,7 @@
   display: block;
   margin-top: 8px;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 @media (max-width: 860px) {

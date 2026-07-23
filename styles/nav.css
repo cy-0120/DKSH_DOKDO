@@ -20,7 +20,7 @@
 .nav.nav--onlight .nav__logo,
 .nav.nav--onlight .nav__menu a,
 .nav.nav--onlight .nav__toggle {
-  color: var(--ink);
+  color: var(--text);
 }
 .nav.nav--onlight .nav__menu a:hover {
   color: var(--ocean);

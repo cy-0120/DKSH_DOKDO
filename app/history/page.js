@@ -30,6 +30,12 @@ const TIMELINE = [
     url: 'https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n306760&code=kc_age_30',
   },
   {
+    year: '1877년',
+    title: '태정관지령, 일본 스스로 독도를 부정하다',
+    desc: '일본의 최고 행정기관 태정관(太政官)이 내무성에 "다케시마(울릉도) 외 일도(一島, 독도)는 일본과 관계없다"는 지령을 내렸습니다. 일본 정부 스스로 독도가 자국 영토가 아님을 공식 인정한 근대 기록입니다.',
+    url: 'https://dokdo.mofa.go.kr/kor/pds/part06_view09.jsp',
+  },
+  {
     year: '1900년',
     title: '대한제국 칙령 제41호',
     desc: '대한제국이 칙령 제41호를 반포하여 울릉도를 울도군으로 승격시키고, 석도(石島, 독도)를 관할구역에 명시했습니다.',
@@ -85,6 +91,49 @@ const TIMELINE = [
   },
 ];
 
+const REFERENCES = [
+  {
+    title: '대한민국 외교부 독도',
+    url: 'https://dokdo.mofa.go.kr',
+    desc: '독도의 역사, 국제법적 근거와 정부의 기본 입장을 소개하는 외교부 공식 사이트',
+  },
+  {
+    title: '국가기록원 독도 기록',
+    url: 'https://theme.archives.go.kr/next/koreaOfRecord/dokdo.do',
+    desc: '국가기록원이 정리한 독도 관련 역사·국제법 기록과 실효 지배 현황',
+  },
+  {
+    title: '우리역사넷 - 국사편찬위원회',
+    url: 'https://contents.history.go.kr',
+    desc: '국사편찬위원회가 운영하는 한국사 학습 포털로, 이 연표에 인용된 사료 다수의 출처',
+  },
+  {
+    title: '동북아역사재단 독도 아카이브',
+    url: 'https://contents.nahf.or.kr/dokdo',
+    desc: '독도 관련 역사 자료와 연구 콘텐츠를 제공하는 아카이브',
+  },
+  {
+    title: '대한민국 정책브리핑',
+    url: 'https://www.korea.kr',
+    desc: '평화선, 다케시마의 날 등 독도 관련 정부 정책과 보도자료를 제공하는 정책 포털',
+  },
+  {
+    title: '디지털울릉문화대전',
+    url: 'https://ulleung.grandculture.net',
+    desc: '한국학중앙연구원이 구축한 울릉도·독도 지역문화 백과사전',
+  },
+  {
+    title: '한국민족문화대백과사전',
+    url: 'https://encykorea.aks.ac.kr',
+    desc: '독도의용수비대 등 독도 관련 인물·사건을 정리한 백과사전',
+  },
+  {
+    title: 'e영상역사관',
+    url: 'https://www.ehistory.go.kr',
+    desc: '대통령 독도 방문 등 현대사 영상·사진 기록을 제공하는 디지털 아카이브',
+  },
+];
+
 const TITLE = '독도의 역사 | 독도';
 const DESCRIPTION =
   '512년 우산국 복속부터 오늘날까지, 독도가 대한민국의 영토임을 뒷받침하는 역사를 연표로 소개합니다.';
@@ -132,6 +181,33 @@ export default function History() {
                 </div>
                 <p className="timeline__desc">{item.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="history-references">
+        <div className="container">
+          <p className="section__eyebrow">REFERENCES</p>
+          <h2 className="section__title">참고자료</h2>
+          <p className="section__lead">
+            이 연표를 작성하는 데 참고한 출처입니다.
+          </p>
+          <div className="gallery__grid gallery__grid--cols-2">
+            {REFERENCES.map((ref) => (
+              <a
+                className="nature-card ref-card"
+                href={ref.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={ref.url}
+              >
+                <div className="ref-card__body">
+                  <p className="ref-card__title">{ref.title}</p>
+                  <p className="ref-card__desc">{ref.desc}</p>
+                  <p className="ref-card__url">{ref.url}</p>
+                </div>
+              </a>
             ))}
           </div>
         </div>

@@ -138,17 +138,17 @@ export default function Home() {
         <div className="container">
           <p className="closing__title">독도를 더 알아보세요</p>
           <p className="closing__text">
-            일본의 주장에 대한 반박 자료, 자주 묻는 질문, 독도 방문 안내까지 확인해 보세요.
+            일본의 주장에 대한 근거 자료, 자주 묻는 질문, 독도 방문 안내까지 확인해 보세요.
           </p>
           <div className="closing__actions">
-            <a href="/docs#rebuttal" className="hero__cta">
-              반박 자료 보기
-            </a>
-            <a href="/faq" className="hero__cta">
-              자주 묻는 질문
+            <a href="/docs#reason" className="hero__cta">
+              근거 자료 보기
             </a>
             <a href="/visit" className="hero__cta">
               방문 안내 보기
+            </a>
+            <a href="/faq" className="hero__cta">
+              자주 묻는 질문
             </a>
           </div>
         </div>

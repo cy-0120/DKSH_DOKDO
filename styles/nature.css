@@ -4,7 +4,7 @@
 .gallery__group-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   margin-bottom: 16px;
 }
 .gallery__grid {
@@ -16,11 +16,11 @@
 .gallery__grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
 
 .nature-card {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  border: 1px solid #eef2f5;
+  border: 1px solid var(--border);
 }
 .nature-card__img {
   width: 100%;
@@ -33,14 +33,14 @@
   padding: 12px 14px;
   font-size: .85rem;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--heading);
   font-style: italic;
 }
 .nature-card__ko {
   display: block;
   font-size: .95rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   font-style: normal;
 }
 .nature-card__sci {
@@ -48,7 +48,7 @@
   margin-top: 2px;
   font-size: .78rem;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--text-muted);
   font-style: italic;
 }
 

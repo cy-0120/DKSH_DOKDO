@@ -1,9 +1,9 @@
 /* ===== 팩트 테이블 (행정/자료실 공용) ===== */
 .facts__table {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  border: 1px solid #eef2f5;
+  border: 1px solid var(--border);
   overflow: hidden;
 }
 .fact-row {
@@ -11,11 +11,11 @@
   justify-content: space-between;
   gap: 20px;
   padding: 18px 26px;
-  border-bottom: 1px solid #eef2f5;
+  border-bottom: 1px solid var(--border);
 }
 .fact-row:last-child { border-bottom: none; }
-.fact-row__key { color: var(--muted); font-weight: 600; }
-.fact-row__val { color: var(--navy); font-weight: 700; text-align: right; }
+.fact-row__key { color: var(--text-muted); font-weight: 600; }
+.fact-row__val { color: var(--heading); font-weight: 700; text-align: right; }
 
 @media (max-width: 480px) {
   .fact-row { flex-direction: column; gap: 4px; }
@@ -36,12 +36,12 @@
 .ref-card__title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   margin-bottom: 6px;
 }
 .ref-card__desc {
   font-size: .9rem;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-bottom: 10px;
 }
 .ref-card__url {
@@ -56,10 +56,10 @@
   gap: 20px;
 }
 .glossary__item {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  border: 1px solid #eef2f5;
+  border: 1px solid var(--border);
   padding: 22px 24px;
 }
 .glossary__term {
@@ -78,7 +78,7 @@
 }
 .glossary__desc {
   font-size: .9rem;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 .ext-icon {
   font-size: .75em;

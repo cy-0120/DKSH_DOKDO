@@ -12,30 +12,38 @@
 .subnav__inner {
   display: flex;
   gap: 10px;
-  background: var(--white);
+  background: var(--surface);
   border-radius: 999px;
   box-shadow: var(--shadow);
-  border: 1px solid #eef2f5;
+  border: 1px solid var(--border);
   padding: 8px;
 }
 .subnav a {
   padding: 10px 22px;
   border-radius: 999px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--text-muted);
   text-decoration: none;
-  transition: background .2s, color .2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .subnav a:hover {
   color: var(--ocean);
 }
 .subnav a.active {
-  background: var(--foam);
+  background: var(--surface-alt);
   color: var(--ocean);
 }
 
 @media (max-width: 480px) {
-  .subnav__inner { gap: 4px; padding: 6px; }
-  .subnav a { padding: 8px 14px; font-size: .82rem; }
+  .subnav__inner {
+    gap: 4px;
+    padding: 6px;
+  }
+  .subnav a {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
 }

@@ -1,9 +1,9 @@
 /* ===== 위치 비교 지도 (울릉도-독도-오키섬) ===== */
 .lcm-card {
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  border: 1px solid #eef2f5;
+  border: 1px solid var(--border);
   overflow: hidden;
   max-width: 720px;
   margin: 0 auto 36px;
@@ -50,7 +50,7 @@
 }
 .lcm-caption {
   font-size: .78rem;
-  color: var(--muted);
+  color: var(--text-muted);
   padding: 14px 24px 0;
 }
 .lcm-panel {
@@ -60,7 +60,7 @@
   font-size: 1rem;
   line-height: 1.6;
   margin: 0 0 4px;
-  color: var(--navy);
+  color: var(--heading);
   font-weight: 600;
 }
 .lcm-headline strong {
@@ -69,7 +69,7 @@
 }
 .lcm-sub {
   font-size: .9rem;
-  color: var(--muted);
+  color: var(--text-muted);
   margin: 0 0 14px;
 }
 .lcm-buttons {
@@ -79,8 +79,8 @@
 }
 .lcm-btn {
   background: transparent;
-  border: 1px solid #d7e3ea;
-  color: var(--navy);
+  border: 1px solid var(--border);
+  color: var(--heading);
   border-radius: 999px;
   padding: 8px 18px;
   font-size: .85rem;
@@ -90,7 +90,7 @@
 }
 .lcm-btn:hover { border-color: var(--ocean); color: var(--ocean); }
 .lcm-btn--active {
-  background: var(--foam);
+  background: var(--surface-alt);
   border-color: var(--ocean);
   color: var(--ocean);
 }

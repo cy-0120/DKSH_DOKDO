@@ -4,8 +4,22 @@ import '@/styles/style.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import TopButton from '@/components/TopButton';
+import ThemeToggle from '@/components/ThemeToggle';
 import RevealInit from '@/components/RevealInit';
 import CountersInit from '@/components/CountersInit';
+
+// 첫 페인트 전에 테마를 적용해 깜빡임(FOUC)을 막는다. body 렌더보다 먼저 실행되어야 하므로 <head>에 둔다.
+const THEME_INIT_SCRIPT = `
+(function() {
+  try {
+    var stored = localStorage.getItem('theme');
+    var theme = stored === 'dark' || stored === 'light'
+      ? stored
+      : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+`;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 const SITE_TITLE = '독도 (獨島) — 대한민국의 아름다운 섬';
@@ -61,7 +75,10 @@ const WEBSITE_JSON_LD = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body>
         <script
           type="application/ld+json"
@@ -71,6 +88,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <TopButton />
+        <ThemeToggle />
         <RevealInit />
         <CountersInit />
       </body>
