@@ -44,7 +44,7 @@
   animation: fadeUp .8s ease both;
 }
 .hero__title {
-  font-family: "Nanum Myeongjo", serif;
+  font-family: "Dokdo", "Nanum Myeongjo", serif;
   font-size: clamp(4.5rem, 16vw, 9rem);
   font-weight: 800;
   letter-spacing: 12px;

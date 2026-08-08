@@ -1,6 +1,8 @@
-/* ===== 콘텐츠 섹션 공통 (개요/위치/자연/역사/정보가 공유) ===== */
+/* ===== 콘텐츠 섹션 공통 (개요/위치/자연/역사/정보/출처가 공유) ===== */
 .section { padding: 100px 0; }
 .section--alt { background: var(--foam); }
+/* 히어로가 없는 단독 페이지의 첫 섹션: 고정 네비게이션(70px) 아래로 내용을 내려준다. */
+.section--page-top { padding-top: 160px; }
 .section__eyebrow {
   color: var(--sky);
   font-size: .85rem;
@@ -24,4 +26,5 @@
 
 @media (max-width: 480px) {
   .section { padding: 70px 0; }
+  .section--page-top { padding-top: 120px; }
 }

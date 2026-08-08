@@ -1,0 +1,35 @@
+/* ===== 출처 ===== */
+.sources__subtitle {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 48px;
+  margin-bottom: 12px;
+}
+.sources__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 760px;
+}
+.source-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f5;
+}
+.source-item__name {
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.source-item__desc { color: var(--muted); font-size: .95rem; }
+.sources__note {
+  margin-top: 32px;
+  font-size: .9rem;
+  color: var(--muted);
+}
