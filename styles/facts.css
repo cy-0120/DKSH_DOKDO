@@ -79,6 +79,7 @@
 .glossary__desc {
   font-size: .9rem;
   color: var(--text-muted);
+  white-space: pre-line;
 }
 .ext-icon {
   font-size: .75em;

@@ -72,6 +72,7 @@
 .faq-item__a-text {
   color: var(--text-muted);
   font-size: .96rem;
+  white-space: pre-line;
 }
 .faq-item__link {
   color: var(--ocean);

@@ -172,7 +172,7 @@ export default function About() {
           <p className="section__eyebrow">ABOUT DOKDO</p>
           <h1 className="section__title">독도 소개</h1>
           <p className="section__lead">
-            위치와 지형, 행정 정보, 그리고 그 안에서 살아가는 식물과 동물까지 — 독도를 이루는
+            위치와 지형, 행정 정보, 그리고 그 안에서 살아가는 식물과 동물까지<br/>독도를 이루는
             모든 것을 자세히 둘러봅니다.
           </p>
         </div>
@@ -187,7 +187,7 @@ export default function About() {
           <h2 className="section__title">동해의 가장 동쪽</h2>
           <p className="section__lead">
             독도는 울릉도에서 동남쪽으로 약 87.4km 떨어져 있습니다. 일본 오키섬(약 157.5km)보다
-            우리 울릉도에 훨씬 더 가깝습니다.
+            <br/>우리 울릉도에 훨씬 더 가깝습니다.
           </p>
           <div style={{ maxWidth: 480, margin: '0 auto 36px' }}>
             <figure className="nature-card">
@@ -331,7 +331,7 @@ export default function About() {
           <p className="section__lead">
             거친 해풍 속에서도 다양한 식물과 동물이 독도 곳곳에서 살아가고 있습니다. 육지에서
             멀리 떨어진 화산섬이라는 특수한 환경 덕분에 독자적인 생태계가 유지되어 왔으며, 이런
-            생태적 가치를 인정받아 1982년 &ldquo;독도 해조류 번식지&rdquo;라는 이름으로 천연기념물
+            생태적 가치를<br/>인정받아 1982년 &ldquo;독도 해조류 번식지&rdquo;라는 이름으로 천연기념물
             제336호에 지정되었고, 1999년 지금의 이름인 「독도 천연보호구역」으로 변경되었습니다.
           </p>
 
@@ -349,7 +349,7 @@ export default function About() {
           <p className="section__lead">
             독도는 동해안 지역에서 괭이갈매기, 바다제비, 슴새 등 바닷새가 대규모로 번식하는
             유일한 곳이자 철새들의 중간 기착지입니다. 다양한 해양 생물도 독도 주변 바다에서
-            살아가며, 한때 이곳을 터전으로 삼았던 강치는 20세기 초 일본의 남획으로 지금은
+            살아가며, 한때 이곳을<br/>터전으로 삼았던 강치는 20세기 초 일본의 남획으로 지금은
             멸종되었습니다.
           </p>
           <div className="gallery__group">

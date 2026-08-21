@@ -11,7 +11,7 @@
     box-shadow 0.35s ease;
 }
 .nav.scrolled {
-  background: rgba(10, 37, 64, 0.92);
+  background: rgba(12, 47, 81, 0.92);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 

@@ -55,6 +55,7 @@
   color: var(--text-muted);
   font-size: 0.95rem;
   max-width: 640px;
+  white-space: pre-line;
 }
 
 @media (max-width: 480px) {

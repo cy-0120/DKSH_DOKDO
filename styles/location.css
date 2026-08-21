@@ -44,11 +44,12 @@
   transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .location__quote {
-  font-family: "Nanum Myeongjo", serif;
-  font-size: 1.2rem;
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 20px;
+  text-align: center;
   color: var(--heading);
-  border-left: 4px solid var(--red);
   padding-left: 20px;
+  margin: 0 20 20 0;
   font-weight: 700;
 }
 

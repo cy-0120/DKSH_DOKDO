@@ -59,23 +59,25 @@
   top: -40px;
   font-size: 1rem;
   font-weight: bold;
+  text-shadow: 1px 2px 5px black;
   letter-spacing: 6px;
-  color: var(--wave);
+  color: var(--white);
   margin-bottom: 18px;
   animation: fadeUp 0.8s ease both;
 }
 .hero__title {
-  font-family: "Nanum Myeongjo", serif;
+  font-family: 'Nanum Myeongjo', serif;
   font-size: clamp(4.5rem, 16vw, 9rem);
-  font-weight: 800;
-  letter-spacing: 12px;
+  font-weight: 700;
+  letter-spacing: 20px;
   line-height: 1;
-  text-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
   animation: fadeUp 0.8s 0.1s ease both;
 }
 .hero__sub {
   font-size: clamp(1rem, 2.4vw, 1.35rem);
   font-weight: 300;
+  text-shadow: 1px 2px 2px black ;
   margin: 24px auto 0;
   max-width: 640px;
   opacity: 0.92;
