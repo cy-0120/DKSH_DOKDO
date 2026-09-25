@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Hero from '@/components/Hero';
 
 export default function Home() {
@@ -138,15 +139,15 @@ export default function Home() {
             일본의 주장에 대한 근거 자료, 자주 묻는 질문, 독도 방문 안내까지 확인해 보세요.
           </p>
           <div className="closing__actions">
-            <a href="/docs#reason" className="hero__cta">
+            <Link href="/docs#reason" className="hero__cta">
               근거 자료 보기
-            </a>
-            <a href="/visit" className="hero__cta">
+            </Link>
+            <Link href="/visit" className="hero__cta">
               방문 안내 보기
-            </a>
-            <a href="/faq" className="hero__cta">
+            </Link>
+            <Link href="/faq" className="hero__cta">
               자주 묻는 질문
-            </a>
+            </Link>
           </div>
         </div>
       </section>

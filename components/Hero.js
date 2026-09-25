@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { PERIODS, getPeriod } from '@/lib/period';
 
 const FADE_MS = 3500; // styles/hero.css 의 .hero__photo transition 시간과 맞춘다.
@@ -88,9 +89,9 @@ export default function Hero() {
           <span className="dot">·</span>
           <span>동경 131° 52&apos;</span>
         </div>
-        <a href="/about" className="hero__cta">
+        <Link href="/about" className="hero__cta">
           독도 알아보기  →
-        </a>
+        </Link>
       </div>
     </section>
   );
