@@ -1,6 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
+  "ignorePaths": ["node_modules", ".next", "public", "styles/fonts.css"],
   "words": [
     "Acanthopagrus",
     "apos",
@@ -17,6 +18,9 @@
     "kangchi",
     "larus",
     "ldquo",
+    "Myeongjo",
+    "Nanum",
+    "nums",
     "onlight",
     "Oplegnathus",
     "orientalis",
