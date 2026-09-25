@@ -8,13 +8,24 @@
   max-width: 720px;
   margin: 0 auto 36px;
 }
-.lcm-svg { width: 100%; height: auto; display: block; }
-.lcm-land { fill: var(--wave); opacity: 0.85; }
+
+.lcm-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lcm-land {
+  fill: var(--wave);
+  opacity: 0.85;
+}
+
 .lcm-land-label {
   fill: rgba(255, 255, 255, 0.35);
   font-size: 12px;
   letter-spacing: 0.02em;
 }
+
 .lcm-line {
   stroke: rgba(255, 255, 255, 0.28);
   stroke-width: 1.5;
@@ -22,40 +33,65 @@
   cursor: pointer;
   transition: stroke .25s ease, stroke-width .25s ease;
 }
-.lcm-line--active { stroke: var(--gold); stroke-width: 2.5; }
-.lcm-dist-label { opacity: 0; transition: opacity .4s ease; }
-.lcm-dist-label--show { opacity: 1; }
+
+.lcm-line--active {
+  stroke: var(--gold);
+  stroke-width: 2.5;
+}
+
+.lcm-dist-label {
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.lcm-dist-label--show {
+  opacity: 1;
+}
+
 .lcm-dist-label text {
   fill: var(--foam);
   font-size: 13px;
   font-variant-numeric: tabular-nums;
 }
-.lcm-island { cursor: pointer; outline: none; }
+
+.lcm-island {
+  cursor: pointer;
+  outline: none;
+}
+
 .lcm-marker {
   fill: rgba(255, 255, 255, 0.55);
   stroke: rgba(10, 37, 64, 0.6);
   stroke-width: 2;
   transition: fill .2s ease, r .2s ease;
 }
-.lcm-marker--dokdo { fill: var(--gold); }
+
+.lcm-marker--dokdo {
+  fill: var(--gold);
+}
+
 .lcm-marker--active,
 .lcm-island:focus-visible .lcm-marker {
   stroke: #fff;
   stroke-width: 3;
 }
+
 .lcm-island-label {
   fill: var(--foam);
   font-size: 13px;
   font-weight: 600;
 }
+
 .lcm-caption {
   font-size: .78rem;
   color: var(--text-muted);
   padding: 14px 24px 0;
 }
+
 .lcm-panel {
   padding: 18px 24px 24px;
 }
+
 .lcm-headline {
   font-size: 1rem;
   line-height: 1.6;
@@ -63,20 +99,24 @@
   color: var(--heading);
   font-weight: 600;
 }
+
 .lcm-headline strong {
   color: var(--ocean);
   font-variant-numeric: tabular-nums;
 }
+
 .lcm-sub {
   font-size: .9rem;
   color: var(--text-muted);
   margin: 0 0 14px;
 }
+
 .lcm-buttons {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
+
 .lcm-btn {
   background: transparent;
   border: 1px solid var(--border);
@@ -88,7 +128,12 @@
   cursor: pointer;
   transition: all .2s ease;
 }
-.lcm-btn:hover { border-color: var(--ocean); color: var(--ocean); }
+
+.lcm-btn:hover {
+  border-color: var(--ocean);
+  color: var(--ocean);
+}
+
 .lcm-btn--active {
   background: var(--surface-alt);
   border-color: var(--ocean);
@@ -96,8 +141,20 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lcm-line, .lcm-marker, .lcm-dist-label, .lcm-btn { transition: none; }
+
+  .lcm-line,
+  .lcm-marker,
+  .lcm-dist-label,
+  .lcm-btn {
+    transition: none;
+  }
 }
+
 @media (max-width: 480px) {
-  .lcm-caption, .lcm-panel { padding-left: 18px; padding-right: 18px; }
+
+  .lcm-caption,
+  .lcm-panel {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 }

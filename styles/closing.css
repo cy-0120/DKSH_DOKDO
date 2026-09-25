@@ -6,13 +6,20 @@
     linear-gradient(180deg, var(--closing-from), var(--chrome));
   color: var(--white);
 }
+
 .closing__title {
   font-family: "Nanum Myeongjo", serif;
   font-size: clamp(2rem, 6vw, 3.4rem);
   font-weight: 800;
   letter-spacing: 4px;
 }
-.closing__text { margin-top: 18px; opacity: .9; font-size: 1.1rem; }
+
+.closing__text {
+  margin-top: 18px;
+  opacity: .9;
+  font-size: 1.1rem;
+}
+
 .closing__actions {
   display: flex;
   justify-content: center;
@@ -20,4 +27,7 @@
   gap: 14px;
   margin-top: 36px;
 }
-.closing__actions .hero__cta { margin-top: 0; }
+
+.closing__actions .hero__cta {
+  margin-top: 0;
+}

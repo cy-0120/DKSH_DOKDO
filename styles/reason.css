@@ -4,12 +4,14 @@
   flex-direction: column;
   gap: 20px;
 }
+
 .reason-card {
   background: var(--surface);
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   padding: 28px 30px;
 }
+
 .reason-card__claim {
   display: flex;
   align-items: flex-start;
@@ -18,11 +20,13 @@
   margin-bottom: 18px;
   border-bottom: 1px dashed var(--border);
 }
+
 .reason-card__answer {
   display: flex;
   align-items: flex-start;
   gap: 14px;
 }
+
 .reason-card__label {
   flex-shrink: 0;
   font-size: 0.78rem;
@@ -31,21 +35,26 @@
   border-radius: 999px;
   white-space: nowrap;
 }
+
 .reason-card__claim .reason-card__label {
   background: var(--claim-bg);
   color: var(--red);
 }
+
 .reason-card__answer .reason-card__label {
   background: var(--surface-alt);
   color: var(--ocean);
 }
+
 .reason-card__text {
   font-size: 0.96rem;
   color: var(--text);
 }
+
 .reason-card__claim .reason-card__text {
   color: var(--text-muted);
 }
+
 .reason-card__source {
   display: inline-flex;
   align-items: center;
@@ -56,6 +65,7 @@
   color: var(--ocean);
   text-decoration: none;
 }
+
 .reason-card__source:hover {
   text-decoration: underline;
 }
@@ -64,6 +74,7 @@
   .reason-card {
     padding: 20px;
   }
+
   .reason-card__claim,
   .reason-card__answer {
     flex-direction: column;

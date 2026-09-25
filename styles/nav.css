@@ -10,20 +10,24 @@
     background 0.35s ease,
     box-shadow 0.35s ease;
 }
+
 .nav.scrolled {
   background: color-mix(in srgb, color-mix(in srgb, var(--chrome) 18%, var(--surface-alt)) 78%, transparent);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(10, 37, 64, 0.12);
 }
+
 /* 밝은 배경(스크롤 후, 또는 히어로 사진이 없는 페이지) 위에서는 글자를 어둡게 */
 .nav.nav--onlight .nav__logo,
 .nav.nav--onlight .nav__menu a,
 .nav.nav--onlight .nav__toggle {
   color: var(--text);
 }
+
 .nav.nav--onlight .nav__menu a:hover {
   color: var(--ocean);
 }
+
 .nav__inner {
   width: min(1200px, 92%);
   margin: 0 auto;
@@ -32,6 +36,7 @@
   justify-content: space-between;
   height: 70px;
 }
+
 .nav__logo {
   display: flex;
   align-items: center;
@@ -42,6 +47,7 @@
   text-decoration: none;
   letter-spacing: 2px;
 }
+
 /* 로고가 70px 내비 바 밖으로 삐져나와 페이지 첫 내용과 겹치지 않도록 바 안쪽 높이로 제한 */
 .nav__logo img {
   display: block;
@@ -49,14 +55,17 @@
   width: auto;
   transition: filter 0.35s ease;
 }
+
 /* 홈의 투명 내비는 어두운 히어로 사진 위에 놓이므로 로고를 단색 흰색으로 */
 .nav:not(.scrolled):not(.nav--onlight) .nav__logo img {
   filter: brightness(0) invert(1);
 }
+
 .nav__menu {
   display: flex;
   gap: 30px;
 }
+
 .nav__menu a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
@@ -65,6 +74,7 @@
   position: relative;
   transition: color 0.2s;
 }
+
 .nav__menu a::after {
   content: "";
   position: absolute;
@@ -75,12 +85,15 @@
   background: var(--wave);
   transition: width 0.25s ease;
 }
+
 .nav__menu a:hover {
   color: var(--white);
 }
+
 .nav__menu a:hover::after {
   width: 100%;
 }
+
 .nav__toggle {
   display: none;
   background: none;
@@ -96,13 +109,10 @@
 @media (max-width: 860px) {
   .nav__menu {
     position: absolute;
-    top: 100%;
+    top: 68px;
     right: 0;
     flex-direction: column;
-    background: color-mix(in srgb, color-mix(in srgb, var(--chrome) 18%, var(--surface-alt)) 98%, transparent);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 24px rgba(10, 37, 64, 0.16);
-    border-radius: 0 0 0 var(--radius-sm);
+    background: color-mix(in srgb, var(--chrome) 97%, transparent);
     width: 200px;
     padding: 20px;
     gap: 18px;
@@ -113,6 +123,7 @@
       transform 0.3s ease,
       visibility 0s linear 0.3s;
   }
+
   .nav__menu.open {
     transform: translateX(0);
     visibility: visible;
@@ -120,17 +131,17 @@
       transform 0.3s ease,
       visibility 0s;
   }
+
   .nav__toggle {
     display: block;
   }
-  /* 모바일 드롭다운은 항상 밝은 배경이므로, 투명 내비(홈 히어로 위)에서도 글자는 어둡게 유지 */
-  .nav .nav__menu a {
-    color: var(--text);
+
+  /* 모바일 드롭다운은 항상 어두운 배경이므로, onlight 상태여도 글자는 밝게 유지 */
+  .nav.nav--onlight .nav__menu a {
+    color: rgba(255, 255, 255, 0.85);
   }
-  .nav .nav__menu a:hover {
-    color: var(--ocean);
-  }
-  .nav .nav__menu a:focus-visible {
-    outline-color: var(--sky);
+
+  .nav.nav--onlight .nav__menu a:hover {
+    color: var(--white);
   }
 }

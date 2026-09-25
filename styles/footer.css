@@ -5,13 +5,16 @@
   padding: 40px 0;
   justify-items: center;
 }
+
 .footer__inner {
   text-align: center;
 }
+
 .footer__logo {
   display: flex;
   justify-content: center;
 }
+
 .footer__logo img {
   width: 152px;
   height: 101px;
@@ -19,6 +22,7 @@
   filter: brightness(0) invert(1);
   opacity: 0.92;
 }
+
 .footer__links {
   display: flex;
   justify-content: center;
@@ -26,6 +30,7 @@
   gap: 8px 28px;
   margin: 18px 0 24px;
 }
+
 .footer__links a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
@@ -33,6 +38,7 @@
   font-weight: 600;
   transition: color .2s ease;
 }
+
 .footer__links a:hover {
   color: var(--white);
 }
