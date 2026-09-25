@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 function FaqItem({ item }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`faq-item${open ? ' open' : ''}`}>
+    <div className={`faq-item${open ? " open" : ""}`}>
       <button
         className="faq-item__question"
         onClick={() => setOpen((v) => !v)}
@@ -15,7 +15,7 @@ function FaqItem({ item }) {
         <span className="faq-item__q-label">Q.</span>
         <span className="faq-item__q-text">{item.q}</span>
         <span className="faq-item__icon" aria-hidden="true">
-          {open ? '−' : '+'}
+          {open ? "−" : "+"}
         </span>
       </button>
       <div className="faq-item__answer-wrap">
@@ -26,7 +26,7 @@ function FaqItem({ item }) {
               {item.a}
               {item.link && (
                 <>
-                  {' '}
+                  {" "}
                   <a href={item.link.href} className="faq-item__link">
                     {item.link.label} →
                   </a>

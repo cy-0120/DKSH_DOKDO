@@ -7,6 +7,7 @@
   position: relative;
   margin-top: 20px;
 }
+
 .timeline::before {
   content: "";
   position: absolute;
@@ -16,6 +17,7 @@
   width: 2px;
   background: var(--border);
 }
+
 .timeline__item {
   position: relative;
   display: grid;
@@ -23,9 +25,11 @@
   column-gap: var(--tl-gap);
   padding-bottom: 40px;
 }
+
 .timeline__item:last-child {
   padding-bottom: 0;
 }
+
 .timeline__item::before {
   content: "";
   position: absolute;
@@ -39,6 +43,7 @@
   background: var(--ocean);
   border: 3px solid var(--surface-alt);
 }
+
 .timeline__year {
   font-family: "Nanum Myeongjo", serif;
   font-size: 1.4rem;
@@ -46,6 +51,7 @@
   color: var(--ocean);
   text-align: right;
 }
+
 .timeline__title {
   font-size: 1.05rem;
   font-weight: 700;
@@ -53,6 +59,7 @@
   margin-bottom: 6px;
   padding-top: 0.28rem;
 }
+
 .timeline__title-link {
   display: inline-flex;
   align-items: center;
@@ -60,14 +67,17 @@
   color: var(--heading);
   text-decoration: none;
 }
+
 .timeline__title-link:hover {
   color: var(--ocean);
   text-decoration: underline;
 }
+
 .timeline__title-link .ext-icon {
   font-size: 0.75em;
   opacity: 0.55;
 }
+
 .timeline__desc {
   color: var(--text-muted);
   font-size: 0.95rem;
@@ -80,27 +90,34 @@
   .timeline {
     padding-left: 30px;
   }
+
   .timeline::before {
     left: 0;
   }
+
   .timeline__item {
     display: block;
   }
+
   .timeline__item::before {
     left: -29px;
   }
+
   .timeline__year {
     text-align: left;
     margin-bottom: 6px;
   }
+
   .timeline__title {
     padding-top: 0;
   }
 }
+
 @media (max-width: 480px) {
   .timeline {
     padding-left: 20px;
   }
+
   .timeline__item::before {
     left: -19px;
   }

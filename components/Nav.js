@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { getPeriod } from '@/lib/period';
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { getPeriod } from "@/lib/period";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,16 +15,18 @@ export default function Nav() {
     function onScroll() {
       setScrolled(window.scrollY > 60);
     }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   // 홈은 Hero 가 사진 전환에 맞춰 시간대를 바꾸므로, 그 외 페이지에서만 1분마다 시간대 색감을 갱신한다.
   useEffect(() => {
-    if (pathname === '/') return;
+    if (pathname === "/") return;
     function sync() {
       const now = new Date();
-      document.documentElement.dataset.period = getPeriod(now.getHours() + now.getMinutes() / 60).key;
+      document.documentElement.dataset.period = getPeriod(
+        now.getHours() + now.getMinutes() / 60,
+      ).key;
     }
     sync();
     const timer = window.setInterval(sync, 60000);
@@ -33,15 +35,24 @@ export default function Nav() {
 
   // 스크롤하면 내비가 밝은 반투명 배경이 되므로 어두운 글자를 쓴다.
   // 스크롤 전에는 홈만 히어로 사진(어두운 배경) 위에 있어 흰 글자, 다른 페이지는 밝은 배경 위라 어두운 글자.
-  const onLight = scrolled || pathname !== '/';
+  const onLight = scrolled || pathname !== "/";
 
   return (
-    <header className={`nav${scrolled ? ' scrolled' : ''}${onLight ? ' nav--onlight' : ''}`} id="nav">
+    <header
+      className={`nav${scrolled ? " scrolled" : ""}${onLight ? " nav--onlight" : ""}`}
+      id="nav"
+    >
       <div className="nav__inner">
         <Link href="/" className="nav__logo">
-          <Image src="/img/logo.png" height={90} width={135} alt="독도 로고" priority />
+          <Image
+            src="/img/logo.png"
+            height={90}
+            width={135}
+            alt="독도 로고"
+            priority
+          />
         </Link>
-        <nav className={`nav__menu${open ? ' open' : ''}`} id="navMenu">
+        <nav className={`nav__menu${open ? " open" : ""}`} id="navMenu">
           <Link href="/about" onClick={() => setOpen(false)}>
             독도 소개
           </Link>
@@ -61,7 +72,7 @@ export default function Nav() {
         <button
           className="nav__toggle"
           id="navToggle"
-          aria-label={open ? '메뉴 닫기' : '메뉴 열기'}
+          aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}
           aria-controls="navMenu"
           onClick={() => setOpen((v) => !v)}

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { PERIODS, getPeriod } from '@/lib/period';
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { PERIODS, getPeriod } from "@/lib/period";
 
 const FADE_MS = 3500; // styles/hero.css 의 .hero__photo transition 시간과 맞춘다.
 
@@ -38,15 +38,15 @@ export default function Hero() {
       const leave = layers[topIndex];
 
       enter.style.backgroundImage = `url("${period.file}")`;
-      enter.style.zIndex = '2';
-      leave.style.zIndex = '1';
+      enter.style.zIndex = "2";
+      leave.style.zIndex = "1";
 
       // 배경 이미지가 먼저 적용되도록 강제 리플로우한 뒤 바로 opacity 전환을 시작한다.
       void enter.offsetWidth;
-      enter.classList.add('is-active');
+      enter.classList.add("is-active");
 
       window.setTimeout(() => {
-        leave.classList.remove('is-active');
+        leave.classList.remove("is-active");
       }, FADE_MS + 100);
 
       topIndex = 1 - topIndex;
@@ -63,7 +63,9 @@ export default function Hero() {
     preload(initialPeriod.file).then(() => {
       crossfadeTo(initialPeriod);
 
-      PERIODS.filter((p) => p.key !== initialPeriod.key).forEach((p) => preload(p.file));
+      PERIODS.filter((p) => p.key !== initialPeriod.key).forEach((p) =>
+        preload(p.file),
+      );
     });
 
     const timer = window.setInterval(() => {
@@ -83,14 +85,16 @@ export default function Hero() {
       <div className="hero__content">
         <p className="hero__eyebrow">대한민국 동쪽 끝, 우리 땅</p>
         <h1 className="hero__title">독도</h1>
-        <p className="hero__sub">해 뜨는 동해 위, 천년의 세월을 지켜온 대한민국의 섬</p>
+        <p className="hero__sub">
+          해 뜨는 동해 위, 천년의 세월을 지켜온 대한민국의 섬
+        </p>
         <div className="hero__coord">
           <span>북위 37° 14&apos;</span>
           <span className="dot">·</span>
           <span>동경 131° 52&apos;</span>
         </div>
         <Link href="/about" className="hero__cta">
-          독도 알아보기  →
+          독도 알아보기 →
         </Link>
       </div>
     </section>

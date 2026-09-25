@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 // 통계 숫자 카운트업 + 거리 막대 채우기 (뷰포트 진입 시 1회 실행)
 
 function animateCount(el) {
   const target = parseInt(el.dataset.target, 10);
-  const suffix = el.dataset.suffix || '';
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    el.textContent = target.toLocaleString('ko-KR') + suffix;
+  const suffix = el.dataset.suffix || "";
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    el.textContent = target.toLocaleString("ko-KR") + suffix;
     return;
   }
   const duration = 1400;
@@ -19,15 +19,15 @@ function animateCount(el) {
     const p = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - p, 3);
     const val = Math.floor(eased * target);
-    el.textContent = val.toLocaleString('ko-KR') + suffix;
+    el.textContent = val.toLocaleString("ko-KR") + suffix;
     if (p < 1) requestAnimationFrame(tick);
-    else el.textContent = target.toLocaleString('ko-KR') + suffix;
+    else el.textContent = target.toLocaleString("ko-KR") + suffix;
   }
   requestAnimationFrame(tick);
 }
 
 function fillBar(barSpan) {
-  const width = barSpan.dataset.width || '0';
+  const width = barSpan.dataset.width || "0";
   requestAnimationFrame(() => {
     barSpan.style.width = width;
   });
@@ -44,20 +44,22 @@ export default function CountersInit() {
           if (!entry.isIntersecting) return;
           const el = entry.target;
 
-          if (el.classList.contains('about__stats')) {
-            el.querySelectorAll('.stat__num').forEach(animateCount);
+          if (el.classList.contains("about__stats")) {
+            el.querySelectorAll(".stat__num").forEach(animateCount);
           }
-          if (el.classList.contains('loc-card')) {
-            const bar = el.querySelector('.loc-card__bar span');
+          if (el.classList.contains("loc-card")) {
+            const bar = el.querySelector(".loc-card__bar span");
             if (bar) fillBar(bar);
           }
           observer.unobserve(el);
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
-    document.querySelectorAll('.about__stats, .loc-card').forEach((el) => observer.observe(el));
+    document
+      .querySelectorAll(".about__stats, .loc-card")
+      .forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, [pathname]);

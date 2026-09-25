@@ -1,73 +1,77 @@
-import SubNav from '@/components/SubNav';
+import SubNav from "@/components/SubNav";
 
 const VISIT_SECTIONS = [
-  { id: 'how-to-visit', label: '방문 방법' },
-  { id: 'reservation', label: '예약' },
-  { id: 'precautions', label: '주의사항' },
-  { id: 'attractions', label: '방문 요소' },
+  { id: "how-to-visit", label: "방문 방법" },
+  { id: "reservation", label: "예약" },
+  { id: "precautions", label: "주의사항" },
+  { id: "attractions", label: "방문 요소" },
 ];
 
 const HOW_TO_VISIT = [
-  { key: '출발지', val: '울릉도 (여객선터미널)' },
-  { key: '이동 수단', val: '울릉도 - 독도 항로 여객선' },
-  { key: '사전 예약', val: '필수 (승선 인원 제한)' },
-  { key: '상륙 여부', val: '접안시설 및 기상 상황에 따라 당일 결정' },
-  { key: '체류 시간', val: '상륙 시 통상 20~30분 내외로 제한 (상황에 따라 변동)' },
+  { key: "출발지", val: "울릉도 (여객선터미널)" },
+  { key: "이동 수단", val: "울릉도 - 독도 항로 여객선" },
+  { key: "사전 예약", val: "필수 (승선 인원 제한)" },
+  { key: "상륙 여부", val: "접안시설 및 기상 상황에 따라 당일 결정" },
+  {
+    key: "체류 시간",
+    val: "상륙 시 통상 20~30분 내외로 제한 (상황에 따라 변동)",
+  },
 ];
 
 const PRECAUTIONS = [
   {
-    term: '기상 의존',
-    desc: '파도와 바람 등 기상 상황에 따라 승선이\n취소되거나, 승선 후에도 실제 상륙(접안)이\n불발될 수 있습니다.',
+    term: "기상 의존",
+    desc: "파도와 바람 등 기상 상황에 따라 승선이\n취소되거나, 승선 후에도 실제 상륙(접안)이\n불발될 수 있습니다.",
   },
   {
-    term: '신분증 지참',
-    desc: '국내 여행이지만 승선 시 신분증 확인 절차가\n있으므로 반드시 신분증을 지참해야 합니다.',
+    term: "신분증 지참",
+    desc: "국내 여행이지만 승선 시 신분증 확인 절차가\n있으므로 반드시 신분증을 지참해야 합니다.",
   },
   {
-    term: '제한된 체류 시간',
-    desc: '상륙이 허가되더라도 체류 시간이 짧게\n제한되므로 정해진 동선과 안내에 따라야 합니다.',
+    term: "제한된 체류 시간",
+    desc: "상륙이 허가되더라도 체류 시간이 짧게\n제한되므로 정해진 동선과 안내에 따라야 합니다.",
   },
   {
-    term: '지정 구역 준수',
-    desc: '독도경비대의 안내에 따라 지정된 구역 내에서만 관람이 가능하며, 자연환경 보호를 위해\n채집·훼손 행위는 금지됩니다.',
+    term: "지정 구역 준수",
+    desc: "독도경비대의 안내에 따라 지정된 구역 내에서만 관람이 가능하며, 자연환경 보호를 위해\n채집·훼손 행위는 금지됩니다.",
   },
   {
-    term: '멀미 대비',
-    desc: '왕복 항해 시간이 길고 파고가 있는 경우가 많아 사전에 멀미약 등을 준비하는 것이 좋습니다.',
+    term: "멀미 대비",
+    desc: "왕복 항해 시간이 길고 파고가 있는 경우가 많아 사전에 멀미약 등을 준비하는 것이 좋습니다.",
   },
 ];
 
 const ATTRACTIONS = [
   {
-    term: '독도 등대',
-    desc: '1954년 설치되어 1998년부터 유인화된 등대로\n독도를 지키는 상징적인 시설입니다.',
+    term: "독도 등대",
+    desc: "1954년 설치되어 1998년부터 유인화된 등대로\n독도를 지키는 상징적인 시설입니다.",
   },
   {
-    term: '접안시설(선착장)',
-    desc: '1996~1997년 준공된 시설로, 500톤급 선박이\n접안할 수 있어 독도 방문의 관문 역할을 합니다.',
+    term: "접안시설(선착장)",
+    desc: "1996~1997년 준공된 시설로, 500톤급 선박이\n접안할 수 있어 독도 방문의 관문 역할을 합니다.",
   },
   {
-    term: '독도경비대 초소',
-    desc: '독도를 상시 경비하는 독도경비대가 주둔하는\n곳으로, 대한민국의 실효 지배를 상징합니다.',
+    term: "독도경비대 초소",
+    desc: "독도를 상시 경비하는 독도경비대가 주둔하는\n곳으로, 대한민국의 실효 지배를 상징합니다.",
   },
   {
-    term: '동도·서도 전경',
-    desc: '해저 화산 활동으로 형성된 기암절벽과 89개의\n부속 도서를 조망할 수 있습니다.',
+    term: "동도·서도 전경",
+    desc: "해저 화산 활동으로 형성된 기암절벽과 89개의\n부속 도서를 조망할 수 있습니다.",
   },
   {
-    term: '헬기장',
-    desc: '1997년 준공된 약 400㎡ 규모의 시설로\n응급 상황 대응과 물자 수송에 활용됩니다.',
+    term: "헬기장",
+    desc: "1997년 준공된 약 400㎡ 규모의 시설로\n응급 상황 대응과 물자 수송에 활용됩니다.",
   },
 ];
 
-const TITLE = '독도 방문 안내 | 독도';
-const DESCRIPTION = '독도를 방문하는 방법, 예약 사이트, 주의사항과 둘러볼 만한 방문 요소를 안내합니다.';
+const TITLE = "독도 방문 안내 | 독도";
+const DESCRIPTION =
+  "독도를 방문하는 방법, 예약 사이트, 주의사항과 둘러볼 만한 방문 요소를 안내합니다.";
 
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  openGraph: { title: TITLE, description: DESCRIPTION, url: '/visit' },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: "/visit" },
   twitter: { title: TITLE, description: DESCRIPTION },
 };
 
@@ -78,8 +82,8 @@ export default function Visit() {
         <div className="container">
           <h1 className="section__title">독도 방문 안내</h1>
           <p className="section__lead">
-            독도는 울릉도를 거쳐 방문할 수 있는 우리 영토입니다. 방문 방법부터 예약, 주의사항,
-            둘러볼 만한 요소까지 안내합니다.
+            독도는 울릉도를 거쳐 방문할 수 있는 우리 영토입니다. 방문 방법부터
+            예약, 주의사항, 둘러볼 만한 요소까지 안내합니다.
           </p>
         </div>
       </section>
@@ -91,8 +95,9 @@ export default function Visit() {
         <div className="container">
           <h2 className="section__title">방문 방법</h2>
           <p className="section__lead">
-            독도는 울릉도에서 출발하는 여객선을 통해 방문할 수 있습니다. 다만 접안시설과 기상
-            상황에 따라 실제 상륙 여부가 당일 결정되므로 여유를 두고 계획해야 합니다.
+            독도는 울릉도에서 출발하는 여객선을 통해 방문할 수 있습니다. 다만
+            접안시설과 기상 상황에 따라 실제 상륙 여부가 당일 결정되므로 여유를
+            두고 계획해야 합니다.
           </p>
           <div className="facts__table">
             {HOW_TO_VISIT.map((f) => (
@@ -122,9 +127,12 @@ export default function Visit() {
               <div className="ref-card__body">
                 <p className="ref-card__title">울릉도·독도 여객선 예약</p>
                 <p className="ref-card__desc">
-                  독도 방문(입도) 예약과 승선권 예매를 진행하는 공식 예약 사이트입니다.
+                  독도 방문(입도) 예약과 승선권 예매를 진행하는 공식 예약
+                  사이트입니다.
                 </p>
-                <p className="ref-card__url">https://island.theksa.co.kr/page/booking</p>
+                <p className="ref-card__url">
+                  https://island.theksa.co.kr/page/booking
+                </p>
               </div>
             </a>
           </div>

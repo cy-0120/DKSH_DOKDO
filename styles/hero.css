@@ -29,9 +29,11 @@
   opacity: 0;
   transition: opacity 3.5s ease;
 }
+
 .hero__photo.is-active {
   opacity: 1;
 }
+
 /* z-index 는 heroSky.js 가 전환 시마다 인라인으로 지정한다(항상 들어오는 사진을 위로). */
 
 /* 상단·하단 스크림 + 중앙 방사형 스크림: 낮 시간대 밝은 사진에서도 글자가 읽히도록 한다 */
@@ -39,19 +41,15 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(
-      ellipse 60% 46% at 50% 50%,
+    radial-gradient(ellipse 60% 46% at 50% 50%,
       rgba(4, 18, 34, 0.5),
       rgba(4, 18, 34, 0.24) 60%,
-      transparent 100%
-    ),
-    linear-gradient(
-      180deg,
+      transparent 100%),
+    linear-gradient(180deg,
       rgba(0, 0, 0, 0.32),
       transparent 26%,
       transparent 58%,
-      rgba(0, 0, 0, 0.45)
-    );
+      rgba(0, 0, 0, 0.45));
   z-index: 3;
   pointer-events: none;
 }
@@ -61,6 +59,7 @@
   z-index: 4;
   padding: 0 20px;
 }
+
 .hero__eyebrow {
   position: relative;
   top: -40px;
@@ -72,6 +71,7 @@
   margin-bottom: 18px;
   animation: fadeUp 0.8s ease both;
 }
+
 .hero__title {
   font-family: 'Nanum Myeongjo', serif;
   font-size: clamp(4.5rem, 16vw, 9rem);
@@ -83,6 +83,7 @@
   text-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
   animation: fadeUp 0.8s 0.1s ease both;
 }
+
 .hero__sub {
   font-size: clamp(1rem, 2.4vw, 1.35rem);
   font-weight: 400;
@@ -91,6 +92,7 @@
   max-width: 640px;
   animation: fadeUp 0.8s 0.2s ease both;
 }
+
 .hero__coord {
   margin-top: 22px;
   font-size: 0.9rem;
@@ -102,9 +104,11 @@
   justify-content: center;
   animation: fadeUp 0.8s 0.3s ease both;
 }
+
 .hero__coord .dot {
   opacity: 0.5;
 }
+
 .hero__cta {
   display: inline-block;
   margin-top: 40px;
@@ -118,16 +122,19 @@
   transition: all 0.3s ease;
   animation: fadeUp 0.8s 0.4s ease both;
 }
+
 .hero__cta:hover {
   background: var(--white);
   color: var(--navy);
   transform: translateY(-3px);
 }
+
 @keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

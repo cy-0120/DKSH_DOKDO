@@ -39,16 +39,19 @@
   --chrome: #2b3358;
   --closing-from: #6b5b95;
 }
+
 :root[data-period="morning"] {
   --surface-alt: #edf5f2;
   --chrome: #10405a;
   --closing-from: #23708a;
 }
+
 :root[data-period="evening"] {
   --surface-alt: #f6efe8;
   --chrome: #2b2547;
   --closing-from: #7a4a6b;
 }
+
 :root[data-period="night"] {
   --surface-alt: #e8eff7;
   --chrome: #081a33;
@@ -75,6 +78,7 @@ html {
   outline: 3px solid var(--sky);
   outline-offset: 3px;
 }
+
 .nav:not(.nav--onlight) :focus-visible,
 .hero :focus-visible,
 .closing :focus-visible,
@@ -96,6 +100,7 @@ html {
   text-decoration: none;
   transform: translateY(-200%);
 }
+
 .skip-link:focus {
   transform: translateY(0);
 }
@@ -119,6 +124,7 @@ body {
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -129,6 +135,7 @@ body {
     transition-delay: 0s !important;
     scroll-behavior: auto !important;
   }
+
   html .reveal {
     opacity: 1;
     transform: none;

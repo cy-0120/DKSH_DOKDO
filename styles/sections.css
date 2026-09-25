@@ -2,9 +2,11 @@
 .section {
   padding: 100px 0;
 }
+
 .section--alt {
   background: var(--surface-alt);
 }
+
 .section__title {
   font-family: "Nanum Myeongjo", serif;
   font-size: clamp(1.9rem, 4.5vw, 2.8rem);
@@ -12,12 +14,14 @@
   color: var(--heading);
   margin-bottom: 20px;
 }
+
 .section__lead {
   font-size: 1.1rem;
   color: var(--text-muted);
   max-width: 720px;
   margin-bottom: 40px;
 }
+
 .section__subtitle {
   font-family: "Nanum Myeongjo", serif;
   font-size: 1.5rem;
@@ -30,10 +34,12 @@
   .section {
     padding: 70px 0;
   }
+
   /* 히어로 없는 페이지의 첫 섹션은 고정 내비(70px) 아래에서 시작하도록 여백 확보 */
-  main > .section:first-child {
+  main>.section:first-child {
     padding-top: 100px;
   }
+
   .section__subtitle {
     margin: 40px 0 16px;
   }
