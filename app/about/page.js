@@ -334,11 +334,11 @@ export default function About() {
           <h3 className="section__subtitle">식물</h3>
           <div className="gallery__group">
             <p className="gallery__group-title">육상 식물</p>
-            <Gallery folder="/img/about/netural/land/" items={LAND_PLANTS} />
+            <Gallery folder="/img/about/natural/land/" items={LAND_PLANTS} />
           </div>
           <div className="gallery__group">
             <p className="gallery__group-title">해조류</p>
-            <Gallery folder="/img/about/netural/sea/" items={SEA_PLANTS} />
+            <Gallery folder="/img/about/natural/sea/" items={SEA_PLANTS} />
           </div>
 
           <h3 className="section__subtitle">동물</h3>
