@@ -1,23 +1,9 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { PERIODS, getPeriod } from '@/lib/period';
 
 const FADE_MS = 3500; // styles/hero.css 의 .hero__photo transition 시간과 맞춘다.
-
-// 시간대 경계(hour, 24시간제). night 는 20시~다음날 4시까지 자정을 걸친다.
-const PERIODS = [
-  { key: 'dawn', start: 4, end: 7, file: '/img/dokdo-time/dokdo-dawn.png' },
-  { key: 'morning', start: 7, end: 11, file: '/img/dokdo-time/dokdo-morning.png' },
-  { key: 'afternoon', start: 11, end: 17, file: '/img/dokdo-time/dokdo-afternoon.png' },
-  { key: 'evening', start: 17, end: 20, file: '/img/dokdo-time/dokdo-evening.png' },
-  { key: 'night', start: 20, end: 28, file: '/img/dokdo-time/dokdo-night.png' }, // 28 = 다음날 4시
-];
-
-function getPeriod(hour) {
-  // night 구간(20~24, 0~4)은 자정을 걸치므로 24를 더해 하나의 구간으로 취급한다.
-  const h = hour < 4 ? hour + 24 : hour;
-  return PERIODS.find((p) => h >= p.start && h < p.end) || PERIODS[PERIODS.length - 1];
-}
 
 function preload(file) {
   return new Promise((resolve) => {
@@ -44,6 +30,8 @@ export default function Hero() {
     function crossfadeTo(period) {
       if (period.key === currentKey) return;
       currentKey = period.key;
+      // 사진이 바뀌는 시점에 사이트 전체 색감도 같은 시간대로 맞춘다 (styles/base.css 의 [data-period])
+      document.documentElement.dataset.period = period.key;
 
       const enter = layers[1 - topIndex];
       const leave = layers[topIndex];
@@ -68,8 +56,13 @@ export default function Hero() {
       return now.getHours() + now.getMinutes() / 60;
     }
 
-    Promise.all(PERIODS.map((p) => preload(p.file))).then(() => {
-      crossfadeTo(getPeriod(currentHour()));
+    // 현재 시간대 이미지만 먼저 로드해 즉시 표시하고, 나머지 시간대 이미지는
+    // 백그라운드에서 미리 받아둔다 (크로스페이드 전환 시 이미 캐시되어 있도록).
+    const initialPeriod = getPeriod(currentHour());
+    preload(initialPeriod.file).then(() => {
+      crossfadeTo(initialPeriod);
+
+      PERIODS.filter((p) => p.key !== initialPeriod.key).forEach((p) => preload(p.file));
     });
 
     const timer = window.setInterval(() => {
@@ -95,8 +88,8 @@ export default function Hero() {
           <span className="dot">·</span>
           <span>동경 131° 52&apos;</span>
         </div>
-        <a href="#about" className="hero__cta">
-          독도 알아보기 ↓
+        <a href="/about" className="hero__cta">
+          독도 알아보기  →
         </a>
       </div>
     </section>

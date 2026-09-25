@@ -8,7 +8,6 @@ export default function Home() {
       {/* 개요 */}
       <section className="section" id="about">
         <div className="container">
-          <p className="section__eyebrow">OVERVIEW</p>
           <h2 className="section__title">독도는 어떤 곳인가요?</h2>
           <div className="about__grid">
             <div className="about__text">
@@ -60,7 +59,6 @@ export default function Home() {
       {/* 위치 */}
       <section className="section section--alt" id="location">
         <div className="container">
-          <p className="section__eyebrow">LOCATION</p>
           <h2 className="section__title">동해의 가장 동쪽</h2>
           <p className="section__lead">
             독도는 울릉도에서 동남쪽으로 약 87.4km 떨어져 있습니다. 일본 오키섬(약 157km)보다
@@ -94,7 +92,6 @@ export default function Home() {
       {/* 정보/팩트 */}
       <section className="section" id="facts">
         <div className="container">
-          <p className="section__eyebrow">FACTS</p>
           <h2 className="section__title">한눈에 보는 독도</h2>
           <div className="facts__table">
             <div className="fact-row">
@@ -129,6 +126,27 @@ export default function Home() {
               <span className="fact-row__key">관할</span>
               <span className="fact-row__val">대한민국 (독도경비대 상주)</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 마무리 CTA */}
+      <section className="closing">
+        <div className="container">
+          <p className="closing__title">독도를 더 알아보세요</p>
+          <p className="closing__text">
+            일본의 주장에 대한 근거 자료, 자주 묻는 질문, 독도 방문 안내까지 확인해 보세요.
+          </p>
+          <div className="closing__actions">
+            <a href="/docs#reason" className="hero__cta">
+              근거 자료 보기
+            </a>
+            <a href="/visit" className="hero__cta">
+              방문 안내 보기
+            </a>
+            <a href="/faq" className="hero__cta">
+              자주 묻는 질문
+            </a>
           </div>
         </div>
       </section>

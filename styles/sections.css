@@ -1,27 +1,40 @@
 /* ===== 콘텐츠 섹션 공통 (개요/위치/자연/역사/정보가 공유) ===== */
-.section { padding: 100px 0; }
-.section--alt { background: var(--foam); }
-.section__eyebrow {
-  color: var(--sky);
-  font-size: .85rem;
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin-bottom: 12px;
+.section {
+  padding: 100px 0;
+}
+.section--alt {
+  background: var(--surface-alt);
 }
 .section__title {
   font-family: "Nanum Myeongjo", serif;
   font-size: clamp(1.9rem, 4.5vw, 2.8rem);
   font-weight: 800;
-  color: var(--navy);
+  color: var(--heading);
   margin-bottom: 20px;
 }
 .section__lead {
   font-size: 1.1rem;
-  color: var(--muted);
+  color: var(--text-muted);
   max-width: 720px;
   margin-bottom: 40px;
 }
+.section__subtitle {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--heading);
+  margin: 56px 0 20px;
+}
 
 @media (max-width: 480px) {
-  .section { padding: 70px 0; }
+  .section {
+    padding: 70px 0;
+  }
+  /* 히어로 없는 페이지의 첫 섹션은 고정 내비(70px) 아래에서 시작하도록 여백 확보 */
+  main > .section:first-child {
+    padding-top: 100px;
+  }
+  .section__subtitle {
+    margin: 40px 0 16px;
+  }
 }

@@ -1,0 +1,107 @@
+/* ===== 역사 연표 ===== */
+/* 데스크톱: 연도(왼쪽 열) | 세로선+점 | 내용(오른쪽 열). 세로선과 점은 두 열 사이 중앙에 놓는다 */
+.timeline {
+  --tl-year: 150px;
+  --tl-gap: 44px;
+  --tl-axis: calc(var(--tl-year) + var(--tl-gap) / 2);
+  position: relative;
+  margin-top: 20px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--tl-axis) - 1px);
+  width: 2px;
+  background: var(--border);
+}
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--tl-year) minmax(0, 1fr);
+  column-gap: var(--tl-gap);
+  padding-bottom: 40px;
+}
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: var(--tl-axis);
+  top: calc(0.85 * 1.4rem - 6px);
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ocean);
+  border: 3px solid var(--surface-alt);
+}
+.timeline__year {
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--ocean);
+  text-align: right;
+}
+.timeline__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 6px;
+  padding-top: 0.28rem;
+}
+.timeline__title-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--heading);
+  text-decoration: none;
+}
+.timeline__title-link:hover {
+  color: var(--ocean);
+  text-decoration: underline;
+}
+.timeline__title-link .ext-icon {
+  font-size: 0.75em;
+  opacity: 0.55;
+}
+.timeline__desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 640px;
+  white-space: pre-line;
+}
+
+/* 좁은 화면: 한 열로 쌓고, 세로선은 왼쪽 가장자리에 둔다 */
+@media (max-width: 700px) {
+  .timeline {
+    padding-left: 30px;
+  }
+  .timeline::before {
+    left: 0;
+  }
+  .timeline__item {
+    display: block;
+  }
+  .timeline__item::before {
+    left: -29px;
+  }
+  .timeline__year {
+    text-align: left;
+    margin-bottom: 6px;
+  }
+  .timeline__title {
+    padding-top: 0;
+  }
+}
+@media (max-width: 480px) {
+  .timeline {
+    padding-left: 20px;
+  }
+  .timeline__item::before {
+    left: -19px;
+  }
+}
