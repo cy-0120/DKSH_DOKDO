@@ -176,7 +176,6 @@ export default function Docs() {
     <>
       <section className="section" id="docs-intro">
         <div className="container">
-          <p className="section__eyebrow">DOCS</p>
           <h1 className="section__title">자료실</h1>
           <p className="section__lead">
             독도에 관한 데이터를 한눈에 확인하고, 주요 용어를 익히고, 일본의 주장에 대한
@@ -190,7 +189,6 @@ export default function Docs() {
       {/* 일반 역사 자료 */}
       <section className="section section--alt" id="general-history">
         <div className="container">
-          <p className="section__eyebrow">GENERAL</p>
           <h2 className="section__title">일반 역사 자료</h2>
           <p className="section__lead">
             독도의 핵심 데이터, 실효 지배를 보여주는 기록, 자주 등장하는 용어와 참고자료입니다.
@@ -270,7 +268,6 @@ export default function Docs() {
       {/* 근거 자료 */}
       <section className="section" id="reason">
         <div className="container">
-          <p className="section__eyebrow">REASON</p>
           <h2 className="section__title">근거 자료</h2>
           <p className="section__lead">
             일본이 독도에 대해 되풀이하는 주장과, 이에 대한 역사적·국제법적 근거를

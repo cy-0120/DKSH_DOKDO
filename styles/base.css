@@ -12,7 +12,10 @@
   --gold: #d4a017;
   --white: #ffffff;
   --shadow: 0 12px 40px rgba(10, 37, 64, 0.12);
+  /* 카드 위계: 강조(--radius + --shadow) / 일반(--radius-sm + --shadow-soft) / 목록·표(카드 없음, 구분선만) */
   --radius: 18px;
+  --radius-sm: 12px;
+  --shadow-soft: 0 2px 10px rgba(10, 37, 64, 0.07);
 
   --body-bg: #eeeded;
   --surface: #f5f5f5;
@@ -21,7 +24,35 @@
   --text-muted: #5a6b78;
   --heading: #0a2540;
   --border: #dbdee1;
+  --rule: #c3cad1;
   --claim-bg: #fdecec;
+
+  /* 시간대별로 바뀌는 색: 연한 섹션 배경, 내비·푸터 바탕, 마무리 배너 그라디언트.
+     기본값은 낮(afternoon). 글자색과의 대비(AA 4.5:1)가 유지되도록 배경은 밝게, 어두운 면은 어둡게 잡는다. */
+  --chrome: #0c2f51;
+  --closing-from: var(--ocean);
+}
+
+/* html[data-period] 는 lib/period.js 의 인라인 스크립트와 Hero 가 지정한다 */
+:root[data-period="dawn"] {
+  --surface-alt: #f3eef6;
+  --chrome: #2b3358;
+  --closing-from: #6b5b95;
+}
+:root[data-period="morning"] {
+  --surface-alt: #edf5f2;
+  --chrome: #10405a;
+  --closing-from: #23708a;
+}
+:root[data-period="evening"] {
+  --surface-alt: #f6efe8;
+  --chrome: #2b2547;
+  --closing-from: #7a4a6b;
+}
+:root[data-period="night"] {
+  --surface-alt: #e8eff7;
+  --chrome: #081a33;
+  --closing-from: #16345c;
 }
 
 * {
@@ -32,6 +63,41 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* 클릭 가능한 요소는 손가락 커서. :where()로 명시도를 0으로 낮춰 zoom-in 등 개별 지정이 우선한다 */
+:where(a[href], button:not(:disabled), [role="button"], summary, label[for]) {
+  cursor: pointer;
+}
+
+/* 키보드 포커스 표시. 어두운 배경(내비·히어로·마무리·푸터) 위에서는 흰색 링 */
+:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 3px;
+}
+.nav:not(.nav--onlight) :focus-visible,
+.hero :focus-visible,
+.closing :focus-visible,
+.footer :focus-visible {
+  outline-color: var(--white);
+}
+
+/* 본문 건너뛰기: 평소엔 화면 밖, 키보드 포커스가 오면 나타난다 */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 200;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 body {
@@ -46,4 +112,29 @@ body {
 .container {
   width: min(1080px, 90%);
   margin: 0 auto;
+}
+
+/* 모션 감소 설정: 애니메이션·전환·부드러운 스크롤을 끄고 숨겨둔 콘텐츠를 바로 보여준다 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  html .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+main:focus {
+  outline: none;
 }

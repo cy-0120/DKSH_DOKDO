@@ -8,7 +8,6 @@ export default function Home() {
       {/* 개요 */}
       <section className="section" id="about">
         <div className="container">
-          <p className="section__eyebrow">OVERVIEW</p>
           <h2 className="section__title">독도는 어떤 곳인가요?</h2>
           <div className="about__grid">
             <div className="about__text">
@@ -60,7 +59,6 @@ export default function Home() {
       {/* 위치 */}
       <section className="section section--alt" id="location">
         <div className="container">
-          <p className="section__eyebrow">LOCATION</p>
           <h2 className="section__title">동해의 가장 동쪽</h2>
           <p className="section__lead">
             독도는 울릉도에서 동남쪽으로 약 87.4km 떨어져 있습니다. 일본 오키섬(약 157km)보다
@@ -94,7 +92,6 @@ export default function Home() {
       {/* 정보/팩트 */}
       <section className="section" id="facts">
         <div className="container">
-          <p className="section__eyebrow">FACTS</p>
           <h2 className="section__title">한눈에 보는 독도</h2>
           <div className="facts__table">
             <div className="fact-row">

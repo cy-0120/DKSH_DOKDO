@@ -76,7 +76,6 @@ export default function Visit() {
     <>
       <section className="section" id="visit-intro">
         <div className="container">
-          <p className="section__eyebrow">VISIT</p>
           <h1 className="section__title">독도 방문 안내</h1>
           <p className="section__lead">
             독도는 울릉도를 거쳐 방문할 수 있는 우리 영토입니다. 방문 방법부터 예약, 주의사항,
@@ -90,7 +89,6 @@ export default function Visit() {
       {/* 방문 방법 */}
       <section className="section section--alt" id="how-to-visit">
         <div className="container">
-          <p className="section__eyebrow">HOW TO VISIT</p>
           <h2 className="section__title">방문 방법</h2>
           <p className="section__lead">
             독도는 울릉도에서 출발하는 여객선을 통해 방문할 수 있습니다. 다만 접안시설과 기상
@@ -110,7 +108,6 @@ export default function Visit() {
       {/* 예약 */}
       <section className="section" id="reservation">
         <div className="container">
-          <p className="section__eyebrow">RESERVATION</p>
           <h2 className="section__title">예약</h2>
           <p className="section__lead">
             독도 방문(입도)은 아래 사이트에서 사전 예약을 통해 진행합니다.
@@ -118,7 +115,7 @@ export default function Visit() {
           <div className="gallery__grid gallery__grid--cols-2">
             <a
               className="nature-card ref-card"
-              href="https://island.theksa.co.kr/page/main"
+              href="https://island.theksa.co.kr/page/booking"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -127,7 +124,7 @@ export default function Visit() {
                 <p className="ref-card__desc">
                   독도 방문(입도) 예약과 승선권 예매를 진행하는 공식 예약 사이트입니다.
                 </p>
-                <p className="ref-card__url">https://island.theksa.co.kr/page/main</p>
+                <p className="ref-card__url">https://island.theksa.co.kr/page/booking</p>
               </div>
             </a>
           </div>
@@ -137,7 +134,6 @@ export default function Visit() {
       {/* 주의사항 */}
       <section className="section section--alt" id="precautions">
         <div className="container">
-          <p className="section__eyebrow">PRECAUTIONS</p>
           <h2 className="section__title">주의사항</h2>
           <p className="section__lead">
             독도 방문 전 아래 사항을 꼭 확인하세요.
@@ -156,7 +152,6 @@ export default function Visit() {
       {/* 방문 요소 */}
       <section className="section" id="attractions">
         <div className="container">
-          <p className="section__eyebrow">ATTRACTIONS</p>
           <h2 className="section__title">방문 요소</h2>
           <p className="section__lead">
             독도에서 둘러볼 수 있는 주요 시설과 풍경입니다.

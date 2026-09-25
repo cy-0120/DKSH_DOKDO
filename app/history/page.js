@@ -30,6 +30,11 @@ const TIMELINE = [
     url: 'https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n306760&code=kc_age_30',
   },
   {
+    year: '1696년',
+    title: '원록각서(元祿覺書) 작성',
+    desc: '안용복 일행이 오키섬에 도착하자 일본 관리들이 이들을 심문하고 그 내용을 기록한 문서입니다.\n안용복이 "울릉도와 독도(당시 마쓰시마)는 조선 강원도에 속한다"고 진술한 내용이 담겨 있어,\n일본 측이 작성한 문서임에도 독도가 조선 영토였음을 뒷받침하는 사료로 평가됩니다.',
+  },
+  {
     year: '1877년',
     title: '태정관지령',
     desc: '일본의 최고 행정기관 태정관(太政官)이 내무성에 "다케시마(울릉도) 외 일도(一島, 독도)는 일본과\n관계없다"는 지령을 내렸습니다. 일본 정부 스스로 독도가 자국 영토가 아님을 공식 인정한\n근대 기록입니다.',
@@ -58,6 +63,11 @@ const TIMELINE = [
     title: 'SCAPIN 제677호',
     desc: '연합국 최고사령관 각서(SCAPIN) 제677호로 독도가 일본의 통치·행정 범위에서\n명시적으로 제외되었습니다.',
     url: 'https://theme.archives.go.kr/next/dokdo/secondaryList03.do',
+  },
+  {
+    year: '1948년',
+    title: '독도 폭격 사건',
+    desc: '6월 8일, 미군 폭격기가 독도 근해에서 폭격 훈련을 하던 중 인근에서 조업하던\n한국인 어민들이 휘말려 다수의 사상자가 발생했습니다. 대한민국 정부 수립 이전 미군정 시기에 벌어진 참사입니다.',
   },
   {
     year: '1952년',
@@ -150,12 +160,11 @@ export default function History() {
     <>
       <section className="section" id="history-intro">
         <div className="container">
-          <p className="section__eyebrow">HISTORY</p>
           <h1 className="section__title">독도의 역사</h1>
           <p className="section__lead">
             512년 신라의 우산국 복속부터 2012년 현직 대통령의 방문에 이르기까지<br/>독도가
-            대한민국의 영토임을 뒷받침하는 역사적 발자취를 살펴봅니다.<br/>각 항목의 제목을 누르면
-            관련 자료로 이동합니다.
+            대한민국의 영토임을 뒷받침하는 역사적 발자취를 살펴봅니다.<br/>↗ 표시가 있는 제목을
+            누르면 관련 자료로 이동합니다.
           </p>
         </div>
       </section>
@@ -164,22 +173,28 @@ export default function History() {
         <div className="container">
           <div className="timeline">
             {TIMELINE.map((item) => (
-              <div className="timeline__item" key={item.year}>
+              <div className="timeline__item" key={`${item.year}-${item.title}`}>
                 <div className="timeline__year">{item.year}</div>
-                <div className="timeline__title">
-                  <a
-                    className="timeline__title-link"
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {item.title}
-                    <span className="ext-icon" aria-hidden="true">
-                      ↗
-                    </span>
-                  </a>
+                <div className="timeline__body">
+                  <div className="timeline__title">
+                    {item.url ? (
+                      <a
+                        className="timeline__title-link"
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.title}
+                        <span className="ext-icon" aria-hidden="true">
+                          ↗
+                        </span>
+                      </a>
+                    ) : (
+                      item.title
+                    )}
+                  </div>
+                  <p className="timeline__desc">{item.desc}</p>
                 </div>
-                <p className="timeline__desc">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -188,7 +203,6 @@ export default function History() {
 
       <section className="section" id="history-references">
         <div className="container">
-          <p className="section__eyebrow">REFERENCES</p>
           <h2 className="section__title">참고자료</h2>
           <p className="section__lead">
             이 연표를 작성하는 데 참고한 출처입니다.
