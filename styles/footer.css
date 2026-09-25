@@ -1,6 +1,6 @@
 /* ===== 푸터 ===== */
 .footer {
-  background: #0a2a4c;
+  background: var(--chrome);
   color: rgba(255, 255, 255, 0.7);
   padding: 40px 0;
   justify-items: center;
@@ -13,6 +13,26 @@
   justify-content: center;
 }
 .footer__logo img {
-  width: 180px;
+  width: 152px;
   height: 101px;
+  /* 검은 붓글씨 로고가 어두운 푸터에서 묻히므로 단색 흰색으로 바꾼다 */
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin: 18px 0 24px;
+}
+.footer__links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 600;
+  transition: color .2s ease;
+}
+.footer__links a:hover {
+  color: var(--white);
 }
