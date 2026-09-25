@@ -169,7 +169,6 @@ export default function About() {
       {/* 페이지 인트로 */}
       <section className="section" id="about-intro">
         <div className="container">
-          <p className="section__eyebrow">ABOUT DOKDO</p>
           <h1 className="section__title">독도 소개</h1>
           <p className="section__lead">
             위치와 지형, 행정 정보, 그리고 그 안에서 살아가는 식물과 동물까지<br/>독도를 이루는
@@ -183,7 +182,6 @@ export default function About() {
       {/* 위치 (+ 지형) */}
       <section className="section section--alt" id="location">
         <div className="container">
-          <p className="section__eyebrow">LOCATION</p>
           <h2 className="section__title">동해의 가장 동쪽</h2>
           <p className="section__lead">
             독도는 울릉도에서 동남쪽으로 약 87.4km 떨어져 있습니다. 일본 오키섬(약 157.5km)보다
@@ -286,7 +284,6 @@ export default function About() {
       {/* 행정 */}
       <section className="section" id="administration">
         <div className="container">
-          <p className="section__eyebrow">ADMINISTRATION</p>
           <h2 className="section__title">행정 정보</h2>
           <p className="section__lead">
             독도는 대한민국 경상북도 울릉군에 속한 행정구역이며, 독도경비대가 상주하며 지키고
@@ -326,7 +323,6 @@ export default function About() {
       {/* 자연 (식물 + 동물) */}
       <section className="section section--alt" id="nature">
         <div className="container">
-          <p className="section__eyebrow">NATURE</p>
           <h2 className="section__title">독도의 자연</h2>
           <p className="section__lead">
             거친 해풍 속에서도 다양한 식물과 동물이 독도 곳곳에서 살아가고 있습니다. 육지에서

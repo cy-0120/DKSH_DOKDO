@@ -17,9 +17,9 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // 홈은 히어로 사진(어두운 배경) 위에 떠 있어 투명 상태에서도 흰 글자가 필요하지만,
-  // 다른 페이지는 투명 상태일 때 밝은 배경 위에 놓이므로 어두운 글자가 필요하다.
-  const onLight = !scrolled && pathname !== '/';
+  // 스크롤하면 내비가 밝은 반투명 배경이 되므로 어두운 글자를 쓴다.
+  // 스크롤 전에는 홈만 히어로 사진(어두운 배경) 위에 있어 흰 글자, 다른 페이지는 밝은 배경 위라 어두운 글자.
+  const onLight = scrolled || pathname !== '/';
 
   return (
     <header className={`nav${scrolled ? ' scrolled' : ''}${onLight ? ' nav--onlight' : ''}`} id="nav">
@@ -47,7 +47,9 @@ export default function Nav() {
         <button
           className="nav__toggle"
           id="navToggle"
-          aria-label="메뉴 열기"
+          aria-label={open ? '메뉴 닫기' : '메뉴 열기'}
+          aria-expanded={open}
+          aria-controls="navMenu"
           onClick={() => setOpen((v) => !v)}
         >
           ☰

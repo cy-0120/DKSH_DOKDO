@@ -62,7 +62,6 @@ export default function Faq() {
     <>
       <section className="section" id="faq-intro">
         <div className="container">
-          <p className="section__eyebrow">FAQ</p>
           <h1 className="section__title">자주 묻는 질문</h1>
           <p className="section__lead">
             독도에 대해 궁금할 만한 질문들을 모아 답변했습니다. 질문을 눌러 답변을 확인하세요.

@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import TopButton from '@/components/TopButton';
 import RevealInit from '@/components/RevealInit';
 import CountersInit from '@/components/CountersInit';
+import { PERIOD_BOOT_SCRIPT } from '@/lib/period';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 const SITE_TITLE = '독도 (獨島) — 대한민국의 아름다운 섬';
@@ -35,9 +36,9 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/img/dokdo-time/dokdo-morning.png',
-        width: 1264,
-        height: 846,
+        url: '/img/og-image.jpg',
+        width: 1200,
+        height: 630,
         alt: '독도의 아침 풍경',
       },
     ],
@@ -46,7 +47,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ['/img/dokdo-time/dokdo-morning.png'],
+    images: ['/img/og-image.jpg'],
   },
 };
 
@@ -61,14 +62,20 @@ const WEBSITE_JSON_LD = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: PERIOD_BOOT_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
         />
+        <a href="#main" className="skip-link">
+          본문으로 건너뛰기
+        </a>
         <Nav />
-        <main>{children}</main>
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
         <TopButton />
         <RevealInit />

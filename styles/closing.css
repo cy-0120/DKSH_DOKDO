@@ -3,7 +3,7 @@
   padding: 70px 0;
   text-align: center;
   background:
-    linear-gradient(180deg, var(--ocean), var(--navy));
+    linear-gradient(180deg, var(--closing-from), var(--chrome));
   color: var(--white);
 }
 .closing__title {

@@ -1,12 +1,17 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 // 통계 숫자 카운트업 + 거리 막대 채우기 (뷰포트 진입 시 1회 실행)
 
 function animateCount(el) {
   const target = parseInt(el.dataset.target, 10);
   const suffix = el.dataset.suffix || '';
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = target.toLocaleString('ko-KR') + suffix;
+    return;
+  }
   const duration = 1400;
   const start = performance.now();
 
@@ -29,6 +34,9 @@ function fillBar(barSpan) {
 }
 
 export default function CountersInit() {
+  // layout에서 한 번만 마운트되므로, 페이지 이동 후 새로 생긴 DOM을 다시 관찰하려면 pathname 의존이 필요하다
+  const pathname = usePathname();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -52,7 +60,7 @@ export default function CountersInit() {
     document.querySelectorAll('.about__stats, .loc-card').forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }
