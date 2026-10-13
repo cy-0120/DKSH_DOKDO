@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getPeriod } from "@/lib/period";
+// 게임 다운로드 버튼의 연결 주소는 game/download.js 에서 바꾼다.
+import { GAME_DOWNLOAD_URL } from "@/game/download";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -68,6 +70,15 @@ export default function Nav() {
           <Link href="/faq" onClick={() => setOpen(false)}>
             FAQ
           </Link>
+          <a
+            className="nav__download"
+            href={GAME_DOWNLOAD_URL}
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            게임 다운로드
+            <span aria-hidden="true">↓</span>
+          </a>
         </nav>
         <button
           className="nav__toggle"
