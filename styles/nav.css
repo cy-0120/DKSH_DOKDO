@@ -145,3 +145,46 @@
     color: var(--white);
   }
 }
+
+/* 게임 다운로드 버튼: 다른 메뉴 글자와 어울리도록 테두리만 있는 알약 모양.
+   글자색·테두리색은 주변 메뉴 링크 색(히어로 위 흰색 / 밝은 배경 위 어두운색)을 그대로 따라가고(currentColor),
+   호버할 때만 파랗게 채운다. 아래 규칙은 메뉴 링크 규칙(밑줄 호버 등)보다 뒤에 두어 덮어쓴다. */
+.nav .nav__menu a.nav__download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.nav .nav__menu a.nav__download:hover {
+  background: var(--ocean);
+  border-color: var(--ocean);
+  color: var(--white);
+}
+
+.nav .nav__menu a.nav__download::after {
+  display: none;
+}
+
+/* 데스크톱: 글자 링크와 버튼의 세로 중심을 맞춘다(버튼이 더 높아 글자가 위로 쏠리는 문제).
+   모바일 드롭다운은 세로 배치라 건드리지 않는다. */
+@media (min-width: 861px) {
+  .nav__menu {
+    align-items: center;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav .nav__menu a.nav__download {
+    justify-content: center;
+  }
+}
