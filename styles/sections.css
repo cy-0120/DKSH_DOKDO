@@ -3,6 +3,17 @@
   padding: 100px 0;
 }
 
+/* 서브 내비가 없는 페이지의 소개 영역: 아래 여백을 줄임 */
+#history-intro,
+#faq-intro {
+  padding-bottom: 20px;
+}
+
+#history-intro .section__lead,
+#faq-intro .section__lead {
+  margin-bottom: 0;
+}
+
 .section--alt {
   background: var(--surface-alt);
 }

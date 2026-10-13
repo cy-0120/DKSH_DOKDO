@@ -32,7 +32,7 @@ export default function SubNav({ sections }) {
             href={`#${s.id}`}
             className={active === s.id ? "active" : ""}
           >
-            {s.label}
+            <span className="subnav__label">{s.label}</span>
           </a>
         ))}
       </div>

@@ -62,7 +62,7 @@ const WEBSITE_JSON_LD = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" suppressHydrationWarning>
+    <html lang="ko" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: PERIOD_BOOT_SCRIPT }} />
         <script
