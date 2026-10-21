@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "독도(獨島)를 소개하는 웹사이트",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
