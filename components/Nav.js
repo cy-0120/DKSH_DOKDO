@@ -5,10 +5,8 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getPeriod } from "@/lib/period";
-// 게임 다운로드 버튼의 연결 주소는 game/download.js 에서 바꾼다.
-import { GAME_DOWNLOAD_URL } from "@/game/download";
-
-export default function Nav() {
+// gameDownload: 게임 저장소 링크(GAME_REPO_URL)가 설정돼 있는지. layout.js 가 서버에서 계산해서 넘겨준다.
+export default function Nav({ gameDownload = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -70,15 +68,18 @@ export default function Nav() {
           <Link href="/faq" onClick={() => setOpen(false)}>
             FAQ
           </Link>
-          <a
-            className="nav__download"
-            href={GAME_DOWNLOAD_URL}
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-          >
-            게임 다운로드
-            <span aria-hidden="true">↓</span>
-          </a>
+          {/* 저장소 링크가 설정되지 않았으면 눌러도 받을 파일이 없으므로 버튼을 숨긴다.
+              /api/download 가 최신 릴리스의 exe 를 찾아 GitHub 에서 바로 내려받게 해 준다. */}
+          {gameDownload && (
+            <a
+              className="nav__download"
+              href="/api/download"
+              onClick={() => setOpen(false)}
+            >
+              게임 다운로드
+              <span aria-hidden="true">↓</span>
+            </a>
+          )}
         </nav>
         <button
           className="nav__toggle"

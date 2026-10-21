@@ -83,6 +83,7 @@ const TIMELINE = [
     year: "1948년 6월 8일",
     title: "독도 폭격 사건",
     desc: "6월 8일, 미군 폭격기가 독도 근해에서 폭격 훈련을 하던 중 인근에서 조업하던\n한국인 어민들이 휘말려 다수의 사상자가 발생했습니다. 대한민국 정부 수립 이전 미군정 시기에 벌어진 참사입니다.",
+    url: "https://www.hani.co.kr/arti/culture/culture_general/1267139.html",
   },
   {
     year: "1948년 8월",

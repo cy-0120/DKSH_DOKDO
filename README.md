@@ -37,6 +37,31 @@ npm run dev
 
 브라우저에서 http://localhost:3000 으로 접속하세요.
 
+## 환경변수 (게임 다운로드)
+
+상단 메뉴의 **게임 다운로드** 버튼은 **게임이 올라간 GitHub 저장소 링크**만 환경변수로 넣으면 동작합니다.
+버튼을 누르면 서버(`/api/download`)가 그 저장소의 **최신 릴리스에서 exe 파일을 찾아** GitHub에서 바로 내려받게 해 줍니다.
+exe 파일 이름을 적을 필요가 없고, 새 버전을 릴리스에 올리면 자동으로 최신 파일이 받아집니다.
+
+1. 게임 exe를 GitHub **Releases**에 올립니다. (저장소는 공개(public)여야 하고, 릴리스에 exe 파일이 첨부되어 있어야 합니다)
+2. 프로젝트 맨 위 폴더에서 `.env.example`을 복사해 `.env.local` 파일을 만듭니다. (`.env.local`은 git에 올라가지 않습니다)
+3. 저장소 링크를 붙여넣고 저장합니다.
+
+```bash
+GAME_REPO_URL=https://github.com/소유자/저장소
+```
+
+4. `npm run dev`를 껐다가 다시 켜면 반영됩니다.
+
+| 변수 | 필수 | 설명 |
+| --- | --- | --- |
+| `GAME_REPO_URL` | 필수 | 게임 GitHub 저장소 링크. 비어 있거나 올바른 주소가 아니면 버튼이 보이지 않습니다. |
+| `GAME_ASSET_NAME` | 선택 | 릴리스에 exe가 **여러 개**일 때 받을 파일 이름. exe가 하나뿐이면 비워 둡니다. |
+
+- exe가 여러 개인데 `GAME_ASSET_NAME`도 없거나, GitHub 조회에 실패하면 잘못된 파일 대신 **그 저장소의 릴리스 페이지**로 안내합니다.
+- GitHub 정보는 5분간 재사용합니다. (비로그인 요청은 시간당 60회로 제한되어 있어서 아끼기 위함입니다)
+- **Vercel 배포**: 프로젝트 → Settings → Environment Variables에 같은 이름으로 추가한 뒤 **Redeploy** 해야 적용됩니다.
+
 ## 프로덕션 빌드
 
 ```bash
@@ -62,6 +87,7 @@ app/                    # 페이지(주소) — 폴더 이름이 곧 주소가 �
   docs/page.js            # /docs   자료실
   visit/page.js           # /visit  방문 안내
   faq/page.js             # /faq    자주 묻는 질문
+  api/download/route.js   # /api/download  최신 릴리스의 exe 를 찾아 GitHub 로 연결
   robots.js, sitemap.js   # 검색엔진용 robots.txt / sitemap.xml 자동 생성
   globals.css             # 전역 CSS 진입점
 components/             # 여러 페이지에서 가져다 쓰는 화면 부품
@@ -78,7 +104,7 @@ components/             # 여러 페이지에서 가져다 쓰는 화면 부품
 lib/
   period.js               # 지금 시각이 새벽·아침·낮·저녁·밤 중 무엇인지 판단 (배경·색감에 사용)
 game/
-  download.js             # ★ 게임 다운로드 링크 — 따옴표 안에 GitHub 링크만 넣고 저장
+  repo.js                 # 환경변수 GAME_REPO_URL(게임 GitHub 저장소 링크)을 읽는 곳 → 아래 "환경변수"
 styles/                 # 커스텀 CSS (기능별 파일을 style.css 가 @import 로 모음)
   style.css               # 진입점
   base.css, fonts.css     # 색상 변수·기본 스타일 / 웹폰트 정의
@@ -93,6 +119,7 @@ public/                 # 코드가 아닌 파일 (주소로 그대로 열린다
 package.json            # 의존성·실행 명령
 next.config.mjs         # Next.js 설정
 jsconfig.json           # `@/*` import 별칭 (예: @/components/Nav)
+.env.example            # 환경변수 예시 (복사해서 .env.local 로 사용)
 README.md
 ```
 
@@ -107,7 +134,7 @@ README.md
 - 자료실 페이지: 독도 핵심 정보와 실효 지배 기록
 - 역사 페이지: 시대별 타임라인 (출처 링크 포함)
 - 방문 안내, FAQ(펼치고 접기) 페이지
-- 상단 메뉴의 **게임 다운로드** 버튼 (링크는 `game/download.js`에서 설정)
+- 상단 메뉴의 **게임 다운로드** 버튼: GitHub 저장소 링크(`GAME_REPO_URL`)만 넣으면 최신 릴리스의 exe를 내려받음 (값이 없으면 버튼 숨김)
 - 모바일 네비게이션 토글, 스크롤 등장 애니메이션
 
 ## 참고자료
