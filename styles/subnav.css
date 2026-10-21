@@ -6,7 +6,8 @@
   display: flex;
   justify-content: center;
   width: min(1080px, 90%);
-  margin: 0 auto;
+  /* 내비를 위로 올리고 아래 여백도 함께 줄임 */
+  margin: -70px auto -100px;
   padding: 14px 0;
 }
 
@@ -37,9 +38,110 @@
 }
 
 .subnav a.active {
-  background: var(--surface-alt);
+  background: color-mix(in srgb, var(--ocean) 16%, var(--surface));
   color: var(--ocean);
 }
+
+/* 태블릿 이상: 처음부터 화면 오른쪽에 목차처럼 세로로 고정 (라벨 + 점).
+   .subnav 는 본문 흐름에서 빠지고, 안쪽 박스만 fixed 로 뜬다 */
+@media (min-width: 768px) {
+  .subnav {
+    position: static;
+    height: 0;
+    margin: 0 auto;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .subnav .subnav__inner {
+    position: fixed;
+    top: 50%;
+    right: max(12px, calc(50% - 540px - 160px));
+    transform: translateY(-50%);
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    pointer-events: auto;
+    animation: subnav-side-in 0.35s ease both;
+  }
+
+  .subnav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border-radius: 0;
+    white-space: nowrap;
+    background: none;
+  }
+
+  .subnav .subnav__label {
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    /* 평소에는 점만 보이고, 목차에 마우스를 올리면 라벨 박스가 나타남 */
+    opacity: 0;
+    transform: translateX(10px);
+    transition:
+      background 0.2s,
+      opacity 0.2s,
+      transform 0.2s;
+  }
+
+  .subnav .subnav__inner:hover .subnav__label,
+  .subnav .subnav__inner:focus-within .subnav__label {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* 마우스가 없는 기기(터치)에서는 항상 보이게 */
+  @media (hover: none) {
+    .subnav .subnav__label {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .subnav a::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  .subnav a.active {
+    background: none;
+  }
+
+  .subnav a.active .subnav__label {
+    background: color-mix(in srgb, var(--ocean) 16%, var(--surface));
+  }
+
+  .subnav a.active::after {
+    background: var(--ocean);
+    opacity: 1;
+  }
+}
+
+@keyframes subnav-side-in {
+  from {
+    opacity: 0;
+    transform: translate(24px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
 
 @media (max-width: 480px) {
   .subnav__inner {
