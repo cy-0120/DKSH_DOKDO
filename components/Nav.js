@@ -68,9 +68,9 @@ export default function Nav({ gameDownload = false }) {
           <Link href="/faq" onClick={() => setOpen(false)}>
             FAQ
           </Link>
-          {/* 저장소 링크가 설정되지 않았으면 눌러도 받을 파일이 없으므로 버튼을 숨긴다.
-              /api/download 가 최신 릴리스의 exe 를 찾아 GitHub 에서 바로 내려받게 해 준다. */}
-          {gameDownload && (
+          {/* 저장소 링크가 설정되어 있으면 /api/download 가 최신 릴리스의 exe 를 찾아 GitHub 에서 바로 내려받게 해 준다.
+              설정되어 있지 않으면 눌러도 받을 파일이 없으므로 링크 대신 "준비중" 표시만 보여준다. */}
+          {gameDownload ? (
             <a
               className="nav__download"
               href="/api/download"
@@ -79,6 +79,10 @@ export default function Nav({ gameDownload = false }) {
               게임 다운로드
               <span aria-hidden="true">↓</span>
             </a>
+          ) : (
+            <span className="nav__download is-disabled" aria-disabled="true">
+              게임 준비중
+            </span>
           )}
         </nav>
         <button

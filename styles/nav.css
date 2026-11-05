@@ -183,8 +183,36 @@
   }
 }
 
+/* 게임 링크가 아직 없을 때의 "게임 준비중" 표시: 같은 알약 모양이지만 흐리게, 눌러도 아무 일이 없다.
+   <a> 가 아니라서 메뉴 링크의 글자색 규칙을 못 받으므로 글자색을 상태별로 직접 지정한다. */
+.nav .nav__menu .nav__download.is-disabled {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 0.6;
+  cursor: default;
+  user-select: none;
+}
+
+.nav.nav--onlight .nav__menu .nav__download.is-disabled {
+  color: var(--text);
+}
+
 @media (max-width: 860px) {
   .nav .nav__menu a.nav__download {
     justify-content: center;
+  }
+
+  /* 모바일 드롭다운은 항상 어두운 배경이므로 글자는 밝게 */
+  .nav .nav__menu .nav__download.is-disabled,
+  .nav.nav--onlight .nav__menu .nav__download.is-disabled {
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.85);
   }
 }
