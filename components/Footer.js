@@ -6,6 +6,7 @@ const FOOTER_LINKS = [
   { href: "/docs", label: "자료실" },
   { href: "/visit", label: "방문 안내" },
   { href: "/faq", label: "FAQ" },
+  { href: "/game", label: "게임 바로가기" },
 ];
 
 export default function Footer() {

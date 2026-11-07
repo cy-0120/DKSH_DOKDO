@@ -7,7 +7,6 @@ import TopButton from "@/components/TopButton";
 import RevealInit from "@/components/RevealInit";
 import CountersInit from "@/components/CountersInit";
 import { PERIOD_BOOT_SCRIPT } from "@/lib/period";
-import { getGameRepo } from "@/game/repo";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const SITE_TITLE = "독도 (獨島) — 대한민국의 아름다운 섬";
@@ -73,7 +72,7 @@ export default function RootLayout({ children }) {
         <a href="#main" className="skip-link">
           본문으로 건너뛰기
         </a>
-        <Nav gameDownload={Boolean(getGameRepo())} />
+        <Nav />
         <main id="main" tabIndex={-1}>
           {children}
         </main>

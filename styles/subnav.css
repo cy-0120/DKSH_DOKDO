@@ -6,8 +6,9 @@
   display: flex;
   justify-content: center;
   width: min(1080px, 90%);
-  /* 내비를 위로 올리고 아래 여백도 함께 줄임 */
-  margin: -70px auto -100px;
+  /* 내비를 위로 올리고 아래 여백도 함께 줄임.
+     아래쪽 값은 알약(약 85px)이 다음 섹션 제목을 덮지 않도록 정한다: 섹션 위 여백(100px) - 이 값 = 알약 아래 여백 */
+  margin: -70px auto -60px;
   padding: 14px 0;
 }
 
