@@ -67,13 +67,8 @@ export default function Nav() {
           <Link href="/faq" onClick={() => setOpen(false)}>
             FAQ
           </Link>
-          <Link
-            href="/game"
-            className="nav__game"
-            onClick={() => setOpen(false)}
-          >
-            게임 바로가기
-            <span aria-hidden="true">→</span>
+          <Link href="/game" onClick={() => setOpen(false)}>
+            게임
           </Link>
         </nav>
         <button
