@@ -4,6 +4,7 @@ const ROUTES = [
   { path: "/", priority: 1.0 },
   { path: "/about", priority: 0.8 },
   { path: "/history", priority: 0.8 },
+  { path: "/history/issues", priority: 0.6 },
   { path: "/docs", priority: 0.8 },
   { path: "/visit", priority: 0.7 },
   { path: "/faq", priority: 0.7 },

@@ -123,3 +123,16 @@
     font-size: 0.8rem;
   }
 }
+
+/* 역사 페이지 소개 아래의 "논란·현안 바로가기" 링크 */
+.issues-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-weight: 700;
+  color: var(--ocean);
+  text-decoration: none;
+}
+
+.issues-link:hover {
+  text-decoration: underline;
+}
